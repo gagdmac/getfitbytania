@@ -16,6 +16,8 @@
       langSwitcherLabel: 'Seleccionar idioma',
       themeToggleLabel: 'Cambiar a modo oscuro',
       themeToggleLabelDark: 'Cambiar a modo claro',
+      settingsToggleLabel: 'Abrir ajustes',
+      settingsToggleCloseLabel: 'Cerrar ajustes',
       brandLabel: 'GetFitByTania \u2014 Inicio',
       langChanged: 'Idioma cambiado a español',
       newWindow: '(abre en ventana nueva)',
@@ -124,6 +126,8 @@
       langSwitcherLabel: 'Select language',
       themeToggleLabel: 'Switch to dark mode',
       themeToggleLabelDark: 'Switch to light mode',
+      settingsToggleLabel: 'Open settings',
+      settingsToggleCloseLabel: 'Close settings',
       brandLabel: 'GetFitByTania \u2014 Home',
       langChanged: 'Language changed to English',
       newWindow: '(opens in new window)',
@@ -224,6 +228,8 @@
       langSwitcherLabel: 'Selecionar idioma',
       themeToggleLabel: 'Mudar para modo escuro',
       themeToggleLabelDark: 'Mudar para modo claro',
+      settingsToggleLabel: 'Abrir configurações',
+      settingsToggleCloseLabel: 'Fechar configurações',
       brandLabel: 'GetFitByTania \u2014 In\u00edcio',
       langChanged: 'Idioma alterado para portugu\u00eas',
       newWindow: '(abre em nova janela)',
@@ -420,6 +426,15 @@
     if (label) toggle.setAttribute('aria-label', label);
   }
 
+  function updateSettingsToggleLabel() {
+    var toggle = document.querySelector('.settings-toggle');
+    if (!toggle) return;
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    var key = expanded ? 'settingsToggleCloseLabel' : 'settingsToggleLabel';
+    var label = translations[currentLang] ? translations[currentLang][key] : '';
+    if (label) toggle.setAttribute('aria-label', label);
+  }
+
 
   /* ── MOBILE NAVIGATION ── */
   function initMobileNav() {
@@ -457,6 +472,64 @@
         updateNavToggleLabel();
         toggle.focus();
       }
+    });
+  }
+
+
+  /* ── SETTINGS PANEL (mobile) ── */
+  function initSettingsPanel() {
+    var toggle = document.querySelector('.settings-toggle');
+    var panel = document.getElementById('settings-panel');
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      panel.classList.toggle('open', !expanded);
+      updateSettingsToggleLabel();
+    });
+
+    // Sync mobile lang buttons with desktop ones
+    panel.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setLanguage(btn.getAttribute('data-lang'));
+        // Sync both switchers
+        syncLangButtons(btn.getAttribute('data-lang'));
+      });
+    });
+
+    // Mobile theme toggle
+    var mobileThemeBtn = panel.querySelector('.theme-toggle--mobile');
+    if (mobileThemeBtn) {
+      mobileThemeBtn.addEventListener('click', toggleTheme);
+    }
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        toggle.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('open');
+        updateSettingsToggleLabel();
+        toggle.focus();
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('open') && !panel.contains(e.target) && !toggle.contains(e.target)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('open');
+        updateSettingsToggleLabel();
+      }
+    });
+  }
+
+  // Keep desktop and mobile lang switchers in sync
+  function syncLangButtons(lang) {
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
     });
   }
 
@@ -553,10 +626,11 @@
     // Set initial language
     setLanguage(currentLang);
 
-    // Language switcher buttons
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    // Language switcher buttons (desktop header-actions)
+    document.querySelectorAll('.header-actions .lang-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         setLanguage(btn.getAttribute('data-lang'));
+        syncLangButtons(btn.getAttribute('data-lang'));
       });
     });
 
@@ -575,6 +649,9 @@
 
     // Mobile nav
     initMobileNav();
+
+    // Settings panel (mobile)
+    initSettingsPanel();
 
     // Active nav
     initActiveNav();

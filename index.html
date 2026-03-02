@@ -63,7 +63,7 @@
           </ul>
         </nav>
 
-        <!-- Header actions -->
+        <!-- Header actions (visible on desktop, hidden on mobile) -->
         <div class="header-actions">
           <!-- Language switcher -->
           <div class="lang-switcher" role="group" data-i18n-aria-label="langSwitcherLabel" aria-label="Seleccionar idioma">
@@ -81,6 +81,36 @@
             <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
             <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
           </button>
+        </div>
+
+        <!-- Settings toggle (mobile only — cog icon) -->
+        <button
+          class="settings-toggle"
+          aria-expanded="false"
+          aria-controls="settings-panel"
+          data-i18n-aria-label="settingsToggleLabel"
+          aria-label="Abrir ajustes"
+        >
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </button>
+
+        <!-- Settings panel (mobile — slides from right) -->
+        <div id="settings-panel" class="settings-panel" aria-label="Ajustes" role="region">
+          <div class="settings-panel-inner">
+            <div class="lang-switcher lang-switcher--mobile" role="group" data-i18n-aria-label="langSwitcherLabel" aria-label="Seleccionar idioma">
+              <button class="lang-btn active" aria-pressed="true" data-lang="es">ES</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="en">EN</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="pt">PT</button>
+            </div>
+            <button
+              class="theme-toggle theme-toggle--mobile"
+              data-i18n-aria-label="themeToggleLabel"
+              aria-label="Cambiar a modo oscuro"
+            >
+              <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+              <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
 
       </div>
