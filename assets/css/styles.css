@@ -1529,6 +1529,7 @@ ul { list-style: none; margin: 0; padding: 0; }
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    height: 100vh;
   }
 
   .nav-link {
