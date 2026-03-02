@@ -54,6 +54,7 @@
             <li><a href="#hero" class="nav-link active" aria-current="true" data-i18n="navHome">Inicio</a></li>
             <li><a href="#about" class="nav-link" data-i18n="navAbout">Sobre mí</a></li>
             <li><a href="#disciplines" class="nav-link" data-i18n="navDisciplines">Disciplinas</a></li>
+            <li><a href="#gallery" class="nav-link" data-i18n="navGallery">Galería</a></li>
             <li><a href="#experience" class="nav-link" data-i18n="navExperience">Experiencia</a></li>
             <li><a href="#contact" class="nav-link" data-i18n="navContact">Contacto</a></li>
           </ul>
@@ -111,11 +112,23 @@
             </div>
           </div>
           <div class="col-12 col-lg-5 d-none d-lg-block">
-            <div class="hero-visual" aria-hidden="true">
-              <div class="hero-circle hero-circle--outer"></div>
-              <div class="hero-circle hero-circle--inner"></div>
-              <div class="hero-circle hero-circle--accent"></div>
-              <span class="hero-visual-text">GET<br>FIT</span>
+            <div class="hero-visual">
+              <!-- Geometric circles -->
+              <div class="hero-circle hero-circle--outer" aria-hidden="true"></div>
+              <div class="hero-circle hero-circle--ring" aria-hidden="true"></div>
+              <div class="hero-circle hero-circle--dot hero-circle--dot-1" aria-hidden="true"></div>
+              <div class="hero-circle hero-circle--dot hero-circle--dot-2" aria-hidden="true"></div>
+              <div class="hero-circle hero-circle--dot hero-circle--dot-3" aria-hidden="true"></div>
+              <!-- Photo -->
+              <div class="hero-img-frame">
+                <img src="assets/pics/TaniaAngplayavertical.jpg"
+                     alt="Tania Angulo, entrenadora personal en Alicante"
+                     data-i18n-alt="heroImgAlt"
+                     class="hero-img"
+                     loading="eager"
+                     width="2830" height="3774">
+              </div>
+              <div class="hero-img-accent" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -132,6 +145,16 @@
         <div class="row g-5 align-items-center">
           <div class="col-12 col-lg-5">
             <div class="about-visual">
+              <div class="geo-circle geo-circle--lg" aria-hidden="true"></div>
+              <div class="geo-circle geo-circle--sm" aria-hidden="true"></div>
+              <div class="about-photo-frame">
+                <img src="assets/pics/TaniaAngym.jpg"
+                     alt="Tania entrenando en el gimnasio"
+                     data-i18n-alt="aboutImgAlt"
+                     class="about-photo"
+                     loading="lazy"
+                     width="1080" height="1264">
+              </div>
               <div class="about-card">
                 <div class="about-card-accent"></div>
                 <div class="about-stats">
@@ -241,6 +264,105 @@
               <p class="discipline-desc" data-i18n="discAqua">Diversión acuática con resultados reales</p>
             </article>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── GALLERY ─── -->
+    <section id="gallery" class="section section--raised" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="gallery-heading" class="section-title" data-i18n="galleryHeading">Galería</h2>
+          <p class="section-subtitle" data-i18n="gallerySubtitle">Momentos de entrenamiento, clases y estilo de vida saludable</p>
+        </div>
+
+        <div class="gallery-masonry" role="list">
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/TaniaAngulohipopresivosalicante.jpg"
+                 alt="Tania enseñando hipopresivos en Alicante"
+                 data-i18n-alt="galHipo"
+                 loading="lazy" width="3236" height="5033">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20191018_140143.jpg"
+                 alt="Sesión de entrenamiento personal"
+                 data-i18n-alt="galTraining1"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20190918_115133.jpg"
+                 alt="Clase dirigida en el gimnasio"
+                 data-i18n-alt="galClass1"
+                 loading="lazy" width="4032" height="3024">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20191115_085359.jpg"
+                 alt="Entrenamiento funcional en grupo"
+                 data-i18n-alt="galFunctional"
+                 loading="lazy" width="4623" height="3461">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20191105_114646.jpg"
+                 alt="Tania durante sesión de cross training"
+                 data-i18n-alt="galCross"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20200125_082523.jpg"
+                 alt="Preparación de rutina de ejercicios"
+                 data-i18n-alt="galRoutine"
+                 loading="lazy" width="3024" height="4032">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20190528_181829.jpg"
+                 alt="Estilo de vida saludable y fitness"
+                 data-i18n-alt="galLifestyle"
+                 loading="lazy" width="2400" height="1350">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20191218_141414.jpg"
+                 alt="Sesión de pilates"
+                 data-i18n-alt="galPilates"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/TaniaAng1.jpg"
+                 alt="Tania Angulo, entrenadora personal"
+                 data-i18n-alt="galPortrait"
+                 loading="lazy" width="2200" height="1994">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20200102_174522.jpg"
+                 alt="Nutrición y alimentación saludable"
+                 data-i18n-alt="galNutrition"
+                 loading="lazy" width="3024" height="3024">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20190524_153755.jpg"
+                 alt="Ejercicio al aire libre"
+                 data-i18n-alt="galOutdoor"
+                 loading="lazy" width="2875" height="3637">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="assets/pics/IMG_20191127_193939.jpg"
+                 alt="Clase de ciclo indoor"
+                 data-i18n-alt="galCycling"
+                 loading="lazy" width="4623" height="3461">
+          </figure>
 
         </div>
       </div>

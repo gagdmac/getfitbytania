@@ -27,6 +27,7 @@
       navHome: 'Inicio',
       navAbout: 'Sobre mí',
       navDisciplines: 'Disciplinas',
+      navGallery: 'Galería',
       navExperience: 'Experiencia',
       navContact: 'Contacto',
 
@@ -63,6 +64,26 @@
       discStrengthTitle: 'Musculación',
       discStrength: 'Construye fuerza, gana confianza',
       discAqua: 'Diversión acuática con resultados reales',
+
+      // Gallery
+      galleryHeading: 'Galería',
+      gallerySubtitle: 'Momentos de entrenamiento, clases y estilo de vida saludable',
+
+      // Image alts
+      heroImgAlt: 'Tania Angulo, entrenadora personal en Alicante',
+      aboutImgAlt: 'Tania entrenando en el gimnasio',
+      galHipo: 'Tania enseñando hipopresivos en Alicante',
+      galTraining1: 'Sesión de entrenamiento personal',
+      galClass1: 'Clase dirigida en el gimnasio',
+      galFunctional: 'Entrenamiento funcional en grupo',
+      galCross: 'Tania durante sesión de cross training',
+      galRoutine: 'Preparación de rutina de ejercicios',
+      galLifestyle: 'Estilo de vida saludable y fitness',
+      galPilates: 'Sesión de pilates',
+      galPortrait: 'Tania Angulo, entrenadora personal',
+      galNutrition: 'Nutrición y alimentación saludable',
+      galOutdoor: 'Ejercicio al aire libre',
+      galCycling: 'Clase de ciclo indoor',
 
       // Experience
       experienceHeading: 'Experiencia',
@@ -106,6 +127,7 @@
       navHome: 'Home',
       navAbout: 'About me',
       navDisciplines: 'Disciplines',
+      navGallery: 'Gallery',
       navExperience: 'Experience',
       navContact: 'Contact',
 
@@ -139,6 +161,26 @@
       discStrengthTitle: 'Strength Training',
       discStrength: 'Build strength, gain confidence',
       discAqua: 'Aquatic fun with real results',
+
+      // Gallery
+      galleryHeading: 'Gallery',
+      gallerySubtitle: 'Training moments, classes and healthy lifestyle',
+
+      // Image alts
+      heroImgAlt: 'Tania Angulo, personal trainer in Alicante',
+      aboutImgAlt: 'Tania working out at the gym',
+      galHipo: 'Tania teaching hypopressive exercises in Alicante',
+      galTraining1: 'Personal training session',
+      galClass1: 'Group fitness class at the gym',
+      galFunctional: 'Group functional training',
+      galCross: 'Tania during a cross training session',
+      galRoutine: 'Setting up an exercise routine',
+      galLifestyle: 'Healthy lifestyle and fitness',
+      galPilates: 'Pilates session',
+      galPortrait: 'Tania Angulo, personal trainer',
+      galNutrition: 'Nutrition and healthy eating',
+      galOutdoor: 'Outdoor exercise',
+      galCycling: 'Indoor cycling class',
 
       experienceHeading: 'Experience',
       experienceSubtitle: 'My professional journey in the fitness world',
@@ -178,6 +220,7 @@
       navHome: 'Início',
       navAbout: 'Sobre mim',
       navDisciplines: 'Disciplinas',
+      navGallery: 'Galeria',
       navExperience: 'Experiência',
       navContact: 'Contato',
 
@@ -211,6 +254,26 @@
       discStrengthTitle: 'Musculação',
       discStrength: 'Construa força, ganhe confiança',
       discAqua: 'Diversão aquática com resultados reais',
+
+      // Gallery
+      galleryHeading: 'Galeria',
+      gallerySubtitle: 'Momentos de treino, aulas e estilo de vida saudável',
+
+      // Image alts
+      heroImgAlt: 'Tania Angulo, personal trainer em Alicante',
+      aboutImgAlt: 'Tania treinando na academia',
+      galHipo: 'Tania ensinando hipopressivos em Alicante',
+      galTraining1: 'Sessão de treino pessoal',
+      galClass1: 'Aula coletiva na academia',
+      galFunctional: 'Treino funcional em grupo',
+      galCross: 'Tania durante sessão de cross training',
+      galRoutine: 'Preparação de rotina de exercícios',
+      galLifestyle: 'Estilo de vida saudável e fitness',
+      galPilates: 'Sessão de pilates',
+      galPortrait: 'Tania Angulo, personal trainer',
+      galNutrition: 'Nutrição e alimentação saudável',
+      galOutdoor: 'Exercício ao ar livre',
+      galCycling: 'Aula de ciclismo indoor',
 
       experienceHeading: 'Experiência',
       experienceSubtitle: 'Minha trajetória profissional no mundo do fitness',
@@ -260,6 +323,14 @@
       var key = el.getAttribute('data-i18n-aria-label');
       if (translations[lang][key] !== undefined) {
         el.setAttribute('aria-label', translations[lang][key]);
+      }
+    });
+
+    // Update alt attributes on images
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-alt');
+      if (translations[lang][key] !== undefined) {
+        el.setAttribute('alt', translations[lang][key]);
       }
     });
 

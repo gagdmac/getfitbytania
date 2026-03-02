@@ -585,51 +585,94 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: var(--space-4);
 }
 
-/* Hero visual (geometric composition) */
+/* Hero visual (photo + geometric circles) */
 .hero-visual {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
-  max-width: 420px;
+  max-width: 440px;
   margin-left: auto;
+  padding: 2rem;
 }
 
+.hero-img-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  z-index: 2;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-img-accent {
+  position: absolute;
+  inset: 3.5rem 0.5rem 0.5rem 3.5rem;
+  border: 3px solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  z-index: 1;
+}
+
+/* Geometric circle decorations */
 .hero-circle {
   position: absolute;
   border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-circle--outer {
-  inset: 0;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
   border: 2px solid var(--color-border);
+  z-index: 0;
 }
 
-.hero-circle--inner {
-  inset: 15%;
-  background: var(--color-accent-subtle);
-  border: 2px solid var(--color-accent);
-  opacity: 0.3;
+.hero-circle--ring {
+  width: 140px;
+  height: 140px;
+  bottom: -2rem;
+  left: -3rem;
+  border: 3px solid var(--color-accent);
+  z-index: 3;
+  opacity: 0.5;
 }
 
-.hero-circle--accent {
-  inset: 30%;
+.hero-circle--dot {
   background: var(--color-accent);
-  opacity: 0.9;
+  z-index: 3;
 }
 
-.hero-visual-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 4rem);
-  color: var(--color-accent-text);
-  letter-spacing: 0.15em;
-  text-align: center;
-  line-height: 1;
-  z-index: 1;
+.hero-circle--dot-1 {
+  width: 16px;
+  height: 16px;
+  top: 1rem;
+  right: -1rem;
+}
+
+.hero-circle--dot-2 {
+  width: 10px;
+  height: 10px;
+  bottom: 4rem;
+  left: -1.5rem;
+  opacity: 0.6;
+}
+
+.hero-circle--dot-3 {
+  width: 24px;
+  height: 24px;
+  top: 40%;
+  right: -2rem;
+  background: none;
+  border: 2px solid var(--color-accent);
+  opacity: 0.4;
 }
 
 /* Scroll hint */
@@ -712,10 +755,55 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 
 /* ═══════════════════════════════════════════
+   GEOMETRIC CIRCLE DECORATIONS (reusable)
+   ═══════════════════════════════════════════ */
+.geo-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geo-circle--lg {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--color-accent);
+  opacity: 0.15;
+  top: -2rem;
+  right: -3rem;
+}
+
+.geo-circle--sm {
+  width: 60px;
+  height: 60px;
+  background: var(--color-accent);
+  opacity: 0.1;
+  bottom: 3rem;
+  left: -1.5rem;
+}
+
+
+/* ═══════════════════════════════════════════
    ABOUT SECTION
    ═══════════════════════════════════════════ */
 .about-visual {
   position: relative;
+}
+
+.about-photo-frame {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-6);
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .about-card {
@@ -834,6 +922,52 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0;
   line-height: 1.5;
 }
+
+/* ═══════════════════════════════════════════
+   GALLERY SECTION — Masonry
+   ═══════════════════════════════════════════ */
+.gallery-masonry {
+  columns: 4;
+  column-gap: var(--space-4);
+}
+
+.gallery-item {
+  margin: 0 0 var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  break-inside: avoid;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out),
+              filter var(--duration-slow) var(--ease-out);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991.98px) {
+  .gallery-masonry {
+    columns: 3;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .gallery-masonry {
+    columns: 2;
+    column-gap: var(--space-2);
+  }
+
+  .gallery-item {
+    margin-bottom: var(--space-2);
+  }
+}
+
 
 /* Container query: wider cards get horizontal layout */
 @container (min-width: 280px) {
