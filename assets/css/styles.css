@@ -208,21 +208,22 @@ ul { list-style: none; margin: 0; padding: 0; }
    SKIP LINK — WCAG 2.4.1
    ═══════════════════════════════════════════ */
 .skip-link {
-  position: absolute;
-  top: -100%;
+  position: fixed;
+  top: 0;
   left: var(--space-4);
-  z-index: 10000;
+  z-index: 10001;
   padding: var(--space-2) var(--space-4);
   background: var(--color-accent);
   color: var(--color-accent-text);
   font-weight: 600;
   font-size: var(--text-sm);
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  transition: top var(--duration-fast) var(--ease-out);
+  transform: translateY(-100%);
+  transition: transform var(--duration-fast) var(--ease-out);
 }
 
 .skip-link:focus {
-  top: 0;
+  transform: translateY(0);
   outline: 2px solid var(--color-accent-text);
   outline-offset: -2px;
   color: var(--color-accent-text);
