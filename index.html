@@ -533,12 +533,7 @@
             <p class="contact-intro" data-i18n="contactIntro">Cuéntame tu objetivo y diseñamos juntos el entrenamiento perfecto para ti.</p>
           </div>
           <div class="col-12 col-lg-6">
-            <form class="contact-form" action="https://formsubmit.co/tanjax79@hotmail.com" method="POST" novalidate>
-              <!-- Honeypot & config -->
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://getfitbytania.es/#contact">
-
+            <form id="contact-form" class="contact-form" novalidate>
               <div class="form-group">
                 <label for="contact-name" data-i18n="formLabelName">Nombre</label>
                 <input type="text" id="contact-name" name="name" required autocomplete="name" data-i18n-placeholder="formPlaceholderName" placeholder="Tu nombre">
@@ -555,6 +550,7 @@
               </div>
 
               <button type="submit" class="btn-cta btn-cta--form" data-i18n="formSubmit">Enviar mensaje</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -587,6 +583,9 @@
 
   <!-- Live region for status announcements (WCAG 4.1.3) -->
   <div id="a11y-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>

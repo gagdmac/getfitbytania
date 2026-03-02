@@ -1335,6 +1335,35 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-color: var(--color-accent-text);
 }
 
+/* Form status messages */
+.form-status {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  min-height: 1.5em;
+}
+
+.form-status--sending {
+  color: var(--color-accent-text);
+  opacity: 0.8;
+}
+
+.form-status--success {
+  color: #2ecc71;
+}
+
+.form-status--error {
+  color: #e74c3c;
+}
+
+[data-theme="dark"] .form-status--success {
+  color: #6fe89d;
+}
+
+[data-theme="dark"] .form-status--error {
+  color: #ff7b7b;
+}
+
 
 /* ═══════════════════════════════════════════
    BUTTONS

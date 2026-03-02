@@ -115,6 +115,9 @@
       formLabelMessage: 'Mensaje',
       formPlaceholderMessage: 'Cuéntame tu objetivo…',
       formSubmit: 'Enviar mensaje',
+      formSending: 'Enviando…',
+      formSuccess: '¡Mensaje enviado! Te responderé pronto.',
+      formError: 'Error al enviar. Inténtalo de nuevo.',
 
       // Footer
       footerRights: 'Todos los derechos reservados.',
@@ -219,6 +222,9 @@
       formLabelMessage: 'Message',
       formPlaceholderMessage: 'Tell me your goal…',
       formSubmit: 'Send message',
+      formSending: 'Sending…',
+      formSuccess: 'Message sent! I\'ll get back to you soon.',
+      formError: 'Failed to send. Please try again.',
 
       footerRights: 'All rights reserved.',
     },
@@ -320,6 +326,9 @@
       formLabelMessage: 'Mensagem',
       formPlaceholderMessage: 'Conte-me seu objetivo…',
       formSubmit: 'Enviar mensagem',
+      formSending: 'Enviando…',
+      formSuccess: 'Mensagem enviada! Responderei em breve.',
+      formError: 'Erro ao enviar. Tente novamente.',
 
       footerRights: 'Todos os direitos reservados.',
     },
@@ -665,6 +674,45 @@
   }
 
 
+  /* ── EMAILJS CONTACT FORM ── */
+  function initContactForm() {
+    // Initialise EmailJS
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init({ publicKey: 'Shy7gAPUu2DAPBDp7' });
+    }
+
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var statusEl = document.getElementById('form-status');
+      var submitBtn = form.querySelector('[type="submit"]');
+      var t = translations[currentLang] || translations.es;
+
+      // Disable button & show sending
+      submitBtn.disabled = true;
+      statusEl.textContent = t.formSending;
+      statusEl.className = 'form-status form-status--sending';
+
+      emailjs.sendForm('service_yze7r4f', 'template_onz9wxf', form)
+        .then(function () {
+          statusEl.textContent = t.formSuccess;
+          statusEl.className = 'form-status form-status--success';
+          form.reset();
+          submitBtn.disabled = false;
+        })
+        .catch(function (error) {
+          console.error('EmailJS error:', error);
+          statusEl.textContent = t.formError;
+          statusEl.className = 'form-status form-status--error';
+          submitBtn.disabled = false;
+        });
+    });
+  }
+
+
   /* ── YEAR IN FOOTER ── */
   function setFooterYear() {
     var el = document.getElementById('year');
@@ -715,6 +763,9 @@
 
     // Scroll reveal
     initScrollReveal();
+
+    // Contact form (EmailJS)
+    initContactForm();
 
     // Footer year
     setFooterYear();
