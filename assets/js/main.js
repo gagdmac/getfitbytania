@@ -18,6 +18,7 @@
       themeToggleLabelDark: 'Cambiar a modo claro',
       settingsToggleLabel: 'Abrir ajustes',
       settingsToggleCloseLabel: 'Cerrar ajustes',
+      fontSizeLabel: 'Aumentar tamaño de fuente',
       brandLabel: 'GetFitByTania \u2014 Inicio',
       langChanged: 'Idioma cambiado a español',
       newWindow: '(abre en ventana nueva)',
@@ -128,6 +129,7 @@
       themeToggleLabelDark: 'Switch to light mode',
       settingsToggleLabel: 'Open settings',
       settingsToggleCloseLabel: 'Close settings',
+      fontSizeLabel: 'Increase font size',
       brandLabel: 'GetFitByTania \u2014 Home',
       langChanged: 'Language changed to English',
       newWindow: '(opens in new window)',
@@ -229,8 +231,7 @@
       themeToggleLabel: 'Mudar para modo escuro',
       themeToggleLabelDark: 'Mudar para modo claro',
       settingsToggleLabel: 'Abrir configurações',
-      settingsToggleCloseLabel: 'Fechar configurações',
-      brandLabel: 'GetFitByTania \u2014 In\u00edcio',
+      settingsToggleCloseLabel: 'Fechar configurações',      fontSizeLabel: 'Aumentar tamanho da fonte',      brandLabel: 'GetFitByTania \u2014 In\u00edcio',
       langChanged: 'Idioma alterado para portugu\u00eas',
       newWindow: '(abre em nova janela)',
       instagramLabel: 'Instagram (abre em nova janela)',
@@ -433,6 +434,40 @@
     var key = expanded ? 'settingsToggleCloseLabel' : 'settingsToggleLabel';
     var label = translations[currentLang] ? translations[currentLang][key] : '';
     if (label) toggle.setAttribute('aria-label', label);
+  }
+
+
+  /* ── FONT SIZE ENGINE ── */
+  var fontSizeSteps = [100, 125, 150, 175, 200];
+  var fontSizeIndex = (function () {
+    var saved = parseInt(localStorage.getItem('gfbt-font-size'), 10);
+    var idx = fontSizeSteps.indexOf(saved);
+    return idx >= 0 ? idx : 0;
+  })();
+
+  function applyFontSize() {
+    var size = fontSizeSteps[fontSizeIndex];
+    document.documentElement.style.fontSize = size + '%';
+    localStorage.setItem('gfbt-font-size', size);
+
+    // Update all toggle buttons
+    document.querySelectorAll('.font-size-toggle').forEach(function (btn) {
+      btn.querySelector('.font-size-value').textContent = size + '%';
+      btn.classList.toggle('active', size > 100);
+    });
+  }
+
+  function cycleFontSize() {
+    fontSizeIndex = (fontSizeIndex + 1) % fontSizeSteps.length;
+    applyFontSize();
+  }
+
+  function initFontSizeToggle() {
+    document.querySelectorAll('.font-size-toggle').forEach(function (btn) {
+      btn.addEventListener('click', cycleFontSize);
+    });
+    // Apply saved
+    applyFontSize();
   }
 
 
@@ -652,6 +687,9 @@
 
     // Settings panel (mobile)
     initSettingsPanel();
+
+    // Font size toggle
+    initFontSizeToggle();
 
     // Active nav
     initActiveNav();
