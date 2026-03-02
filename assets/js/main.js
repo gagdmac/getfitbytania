@@ -450,6 +450,25 @@
     document.documentElement.style.fontSize = size + '%';
     localStorage.setItem('gfbt-font-size', size);
 
+    // Cap brand scaling at 125 %
+    var brandScale = size <= 125 ? 1 : (125 / size);
+    document.documentElement.style.setProperty('--brand-scale', brandScale);
+
+    // Toggle compact nav mode (hamburger on desktop at ≥ 150 %)
+    if (size >= 150) {
+      document.documentElement.setAttribute('data-font-compact', '');
+    } else {
+      document.documentElement.removeAttribute('data-font-compact');
+      // Close nav if it was open in compact mode
+      var navToggle = document.querySelector('.nav-toggle');
+      var navList = document.getElementById('main-nav');
+      if (navToggle && navList) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove('open');
+        updateNavToggleLabel();
+      }
+    }
+
     // Update all toggle buttons
     document.querySelectorAll('.font-size-toggle').forEach(function (btn) {
       btn.querySelector('.font-size-value').textContent = size + '%';

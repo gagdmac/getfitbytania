@@ -317,19 +317,19 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: calc(2.25rem * var(--brand-scale, 1));
+  height: calc(2.25rem * var(--brand-scale, 1));
   background: var(--color-accent);
   color: var(--color-accent-text);
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: calc(var(--text-lg) * var(--brand-scale, 1));
   letter-spacing: 0.05em;
   border-radius: var(--radius-sm);
 }
 
 .brand-text {
   font-family: var(--font-body);
-  font-size: var(--text-lg);
+  font-size: calc(var(--text-lg) * var(--brand-scale, 1));
   font-weight: 300;
   letter-spacing: 0.02em;
 }
@@ -1531,6 +1531,71 @@ ul { list-style: none; margin: 0; padding: 0; }
   .btn-ghost:hover {
     transform: none;
   }
+}
+
+
+/* ═══════════════════════════════════════════
+   FONT-COMPACT — Collapse nav at ≥ 150 %
+   ═══════════════════════════════════════════ */
+html[data-font-compact] .nav-toggle {
+  display: flex;
+  order: -1;
+}
+
+html[data-font-compact] .header-inner {
+  gap: var(--space-2);
+}
+
+html[data-font-compact] .brand {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+html[data-font-compact] .brand-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html[data-font-compact] nav[aria-label="Main"] {
+  position: relative;
+}
+
+html[data-font-compact] .nav-list {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--color-surface-overlay);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: var(--space-6) var(--space-4);
+  gap: var(--space-1);
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform var(--duration-normal) var(--ease-out),
+              opacity var(--duration-normal) var(--ease-out),
+              visibility var(--duration-normal);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+html[data-font-compact] .nav-list.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+}
+
+html[data-font-compact] .nav-link {
+  font-size: var(--text-lg);
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
 }
 
 
