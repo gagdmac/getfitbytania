@@ -105,6 +105,13 @@
       // Contact
       contactHeading: '¿Empezamos?',
       contactIntro: 'Cuéntame tu objetivo y diseñamos juntos el entrenamiento perfecto para ti.',
+      formLabelName: 'Nombre',
+      formPlaceholderName: 'Tu nombre',
+      formLabelEmail: 'Email',
+      formPlaceholderEmail: 'tu@email.com',
+      formLabelMessage: 'Mensaje',
+      formPlaceholderMessage: 'Cuéntame tu objetivo…',
+      formSubmit: 'Enviar mensaje',
 
       // Footer
       footerRights: 'Todos los derechos reservados.',
@@ -199,6 +206,13 @@
 
       contactHeading: 'Ready to start?',
       contactIntro: 'Tell me your goal and we\'ll design the perfect training plan for you.',
+      formLabelName: 'Name',
+      formPlaceholderName: 'Your name',
+      formLabelEmail: 'Email',
+      formPlaceholderEmail: 'you@email.com',
+      formLabelMessage: 'Message',
+      formPlaceholderMessage: 'Tell me your goal…',
+      formSubmit: 'Send message',
 
       footerRights: 'All rights reserved.',
     },
@@ -292,6 +306,13 @@
 
       contactHeading: 'Vamos começar?',
       contactIntro: 'Conte-me seu objetivo e juntos criamos o treino perfeito para você.',
+      formLabelName: 'Nome',
+      formPlaceholderName: 'Seu nome',
+      formLabelEmail: 'Email',
+      formPlaceholderEmail: 'seu@email.com',
+      formLabelMessage: 'Mensagem',
+      formPlaceholderMessage: 'Conte-me seu objetivo…',
+      formSubmit: 'Enviar mensagem',
 
       footerRights: 'Todos os direitos reservados.',
     },
@@ -331,6 +352,14 @@
       var key = el.getAttribute('data-i18n-alt');
       if (translations[lang][key] !== undefined) {
         el.setAttribute('alt', translations[lang][key]);
+      }
+    });
+
+    // Update placeholder attributes on inputs/textareas
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (translations[lang][key] !== undefined) {
+        el.setAttribute('placeholder', translations[lang][key]);
       }
     });
 
@@ -478,7 +507,7 @@
       '.timeline-item',
       '.formation-card',
       '.contact-intro',
-      '.contact-details',
+      '.contact-form',
     ];
 
     revealTargets.forEach(function (selector) {
