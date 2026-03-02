@@ -1,0 +1,17 @@
+# Full FontAwesome Pro reference (not needed in production)
+assets/fontawesome-pro-5-web/
+
+# FontAwesome web bundle
+assets/fontawesome-web/
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+*.swp
+*.swo
