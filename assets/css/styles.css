@@ -1659,6 +1659,84 @@ html[data-font-compact] .nav-link {
 
 
 /* ═══════════════════════════════════════════
+   RESPONSIVE — Settings toggle (≤ 1199px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1199.98px) {
+  /* Hide desktop header-actions, show settings cog */
+  .header-actions {
+    display: none;
+  }
+
+  .settings-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-border-subtle);
+    background: var(--color-surface-raised);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    flex-shrink: 0;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out),
+                transform var(--duration-normal) var(--ease-out);
+  }
+
+  .settings-toggle:hover {
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+  }
+
+  .settings-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .settings-toggle[aria-expanded="true"] {
+    color: var(--color-accent);
+    transform: rotate(90deg);
+  }
+
+  /* Settings panel — slides from right */
+  .settings-panel {
+    display: block;
+    position: fixed;
+    top: 100%;
+    right: 0;
+    z-index: 998;
+    background: var(--color-surface-overlay);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    border-radius: 0 0 0 var(--radius-lg);
+    padding: var(--space-4) var(--space-6);
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--duration-normal) var(--ease-out),
+                opacity var(--duration-normal) var(--ease-out),
+                visibility var(--duration-normal);
+  }
+
+  .settings-panel.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .settings-panel-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+}
+
+
+/* ═══════════════════════════════════════════
    RESPONSIVE — Mobile
    ═══════════════════════════════════════════ */
 @media (max-width: 991.98px) {
@@ -1749,79 +1827,6 @@ html[data-font-compact] .nav-link {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  /* Hide desktop header-actions on mobile */
-  .header-actions {
-    display: none;
-  }
-
-  /* Show settings cog on mobile */
-  .settings-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--color-border-subtle);
-    background: var(--color-surface-raised);
-    border-radius: var(--radius-full);
-    cursor: pointer;
-    color: var(--color-text-secondary);
-    font-size: var(--text-base);
-    flex-shrink: 0;
-    transition: border-color var(--duration-fast) var(--ease-out),
-                color var(--duration-fast) var(--ease-out),
-                transform var(--duration-normal) var(--ease-out);
-  }
-
-  .settings-toggle:hover {
-    border-color: var(--color-border);
-    color: var(--color-text-primary);
-  }
-
-  .settings-toggle:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-  }
-
-  .settings-toggle[aria-expanded="true"] {
-    color: var(--color-accent);
-    transform: rotate(90deg);
-  }
-
-  /* Settings panel — slides from right */
-  .settings-panel {
-    display: block;
-    position: fixed;
-    top: 100%;
-    right: 0;
-    z-index: 998;
-    background: var(--color-surface-overlay);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-left: 1px solid var(--color-border-subtle);
-    border-bottom: 1px solid var(--color-border-subtle);
-    border-radius: 0 0 0 var(--radius-lg);
-    padding: var(--space-4) var(--space-6);
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform var(--duration-normal) var(--ease-out),
-                opacity var(--duration-normal) var(--ease-out),
-                visibility var(--duration-normal);
-  }
-
-  .settings-panel.open {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .settings-panel-inner {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
   }
 
   /* .timeline {
