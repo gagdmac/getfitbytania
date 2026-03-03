@@ -118,6 +118,10 @@
       formSending: 'Enviando…',
       formSuccess: '¡Mensaje enviado! Te responderé pronto.',
       formError: 'Error al enviar. Inténtalo de nuevo.',
+      errorNameRequired: 'Por favor, introduce tu nombre.',
+      errorEmailRequired: 'Por favor, introduce tu email.',
+      errorEmailInvalid: 'Introduce un email válido (ej. nombre@dominio.com).',
+      errorMessageRequired: 'Por favor, escribe tu mensaje.',
 
       // Footer
       footerRights: 'Todos los derechos reservados.',
@@ -225,6 +229,10 @@
       formSending: 'Sending…',
       formSuccess: 'Message sent! I\'ll get back to you soon.',
       formError: 'Failed to send. Please try again.',
+      errorNameRequired: 'Please enter your name.',
+      errorEmailRequired: 'Please enter your email.',
+      errorEmailInvalid: 'Enter a valid email (e.g. name@domain.com).',
+      errorMessageRequired: 'Please write your message.',
 
       footerRights: 'All rights reserved.',
     },
@@ -329,6 +337,10 @@
       formSending: 'Enviando…',
       formSuccess: 'Mensagem enviada! Responderei em breve.',
       formError: 'Erro ao enviar. Tente novamente.',
+      errorNameRequired: 'Por favor, insira seu nome.',
+      errorEmailRequired: 'Por favor, insira seu email.',
+      errorEmailInvalid: 'Insira um email válido (ex. nome@dominio.com).',
+      errorMessageRequired: 'Por favor, escreva sua mensagem.',
 
       footerRights: 'Todos os direitos reservados.',
     },
@@ -675,6 +687,49 @@
 
 
   /* ── EMAILJS CONTACT FORM ── */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function validateField(field, t) {
+    var name = field.name;
+    var val = field.value.trim();
+    var errorEl = document.getElementById('error-' + name);
+    var msg = '';
+
+    if (name === 'name' && !val) {
+      msg = t.errorNameRequired;
+    } else if (name === 'email') {
+      if (!val) {
+        msg = t.errorEmailRequired;
+      } else if (!EMAIL_RE.test(val)) {
+        msg = t.errorEmailInvalid;
+      }
+    } else if (name === 'message' && !val) {
+      msg = t.errorMessageRequired;
+    }
+
+    if (errorEl) errorEl.textContent = msg;
+    field.classList.toggle('invalid', !!msg);
+    field.setAttribute('aria-invalid', !!msg ? 'true' : 'false');
+    return !msg;
+  }
+
+  function validateForm(form, t) {
+    var fields = form.querySelectorAll('[required]');
+    var allValid = true;
+    var firstInvalid = null;
+
+    fields.forEach(function (field) {
+      var ok = validateField(field, t);
+      if (!ok && allValid) {
+        firstInvalid = field;
+        allValid = false;
+      }
+    });
+
+    if (firstInvalid) firstInvalid.focus();
+    return allValid;
+  }
+
   function initContactForm() {
     // Initialise EmailJS
     if (typeof emailjs !== 'undefined') {
@@ -684,12 +739,30 @@
     var form = document.getElementById('contact-form');
     if (!form) return;
 
+    // Real-time validation on blur
+    form.querySelectorAll('[required]').forEach(function (field) {
+      field.addEventListener('blur', function () {
+        var t = translations[currentLang] || translations.es;
+        validateField(field, t);
+      });
+      // Clear error on input
+      field.addEventListener('input', function () {
+        if (field.classList.contains('invalid')) {
+          var t = translations[currentLang] || translations.es;
+          validateField(field, t);
+        }
+      });
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       var statusEl = document.getElementById('form-status');
       var submitBtn = form.querySelector('[type="submit"]');
       var t = translations[currentLang] || translations.es;
+
+      // Validate all fields
+      if (!validateForm(form, t)) return;
 
       // Disable button & show sending
       submitBtn.disabled = true;
@@ -701,6 +774,14 @@
           statusEl.textContent = t.formSuccess;
           statusEl.className = 'form-status form-status--success';
           form.reset();
+          // Clear any lingering error states
+          form.querySelectorAll('.invalid').forEach(function (f) {
+            f.classList.remove('invalid');
+            f.setAttribute('aria-invalid', 'false');
+          });
+          form.querySelectorAll('.field-error').forEach(function (el) {
+            el.textContent = '';
+          });
           submitBtn.disabled = false;
         })
         .catch(function (error) {
