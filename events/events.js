@@ -101,12 +101,16 @@
 
   /* ── CARD RENDERERS ── */
 
-  function renderFeaturedCard(event) {
+  /* Color order: 1st upcoming = green, 2nd = blue, 3rd+ = accent (default) */
+  var COLOR_CLASSES = ['event-card--green', 'event-card--blue', ''];
+
+  function renderFeaturedCard(event, colorIdx) {
     var upcoming = isUpcoming(event.date);
     var badgeText = upcoming ? t('events.badgeUpcoming') : t('events.badgePast');
     var badgeClass = upcoming ? '' : ' event-badge--past';
+    var colorClass = (upcoming && colorIdx !== undefined) ? (COLOR_CLASSES[colorIdx] || '') : '';
 
-    return '<article class="event-card event-card--featured event-card--page reveal">' +
+    return '<article class="event-card event-card--featured event-card--page reveal' + (colorClass ? ' ' + colorClass : '') + '">' +
       '<div class="event-card-image">' +
         '<img src="' + escapeHtml(event.image) + '" ' +
           'alt="' + escapeHtml(loc(event, 'imageAlt')) + '" ' +
@@ -135,13 +139,14 @@
     '</article>';
   }
 
-  function renderGridCard(event) {
+  function renderGridCard(event, colorIdx) {
     var upcoming = isUpcoming(event.date);
     var badgeText = upcoming ? t('events.badgeUpcoming') : t('events.badgePast');
     var badgeClass = upcoming ? '' : ' event-badge--past';
+    var colorClass = (upcoming && colorIdx !== undefined) ? (COLOR_CLASSES[colorIdx] || '') : '';
 
     return '<div class="col-12 col-md-6 col-lg-4" role="listitem">' +
-      '<article class="event-card event-card--grid reveal">' +
+      '<article class="event-card event-card--grid reveal' + (colorClass ? ' ' + colorClass : '') + '">' +
         '<div class="event-card-image event-card-image--grid">' +
           '<img src="' + escapeHtml(event.image) + '" ' +
             'alt="' + escapeHtml(loc(event, 'imageAlt')) + '" ' +
@@ -209,7 +214,7 @@
 
     // Render featured
     if (featured) {
-      featuredContainer.innerHTML = renderFeaturedCard(featured);
+      featuredContainer.innerHTML = renderFeaturedCard(featured, 0);
       featuredSection.hidden = false;
     } else {
       featuredContainer.innerHTML = '';
@@ -219,12 +224,18 @@
     // Grid events (exclude featured)
     var gridEvents = filtered.filter(function (e) { return !featured || e.id !== featured.id; });
 
+    // Build upcoming color index: featured was 0, grid upcoming start at 1
+    var upcomingIdx = featured ? 1 : 0;
+
     if (gridEvents.length === 0 && !featured) {
       gridContainer.innerHTML = '';
       emptyEl.hidden = false;
     } else {
       emptyEl.hidden = true;
-      gridContainer.innerHTML = gridEvents.map(renderGridCard).join('');
+      gridContainer.innerHTML = gridEvents.map(function (e) {
+        var idx = isUpcoming(e.date) ? upcomingIdx++ : undefined;
+        return renderGridCard(e, idx);
+      }).join('');
     }
 
     // Update heading text based on filter

@@ -2221,9 +2221,141 @@ a.contact-hero__card:focus-visible {
 }
 
 
-/* ═══════════════════════════════════════════
-   HOME EVENTS — Small cards
-   ═══════════════════════════════════════════ */
+/* ── Event card color variants ── */
+
+/* Green (1st / most recent upcoming) */
+.event-card--green .event-card-date,
+.event-card--green .event-card-date-overlay {
+  background: linear-gradient(135deg, #1E7A3A 0%, #145A28 100%);
+}
+
+.event-card--green:hover {
+  border-color: #1E7A3A;
+}
+
+.event-card--green .event-badge {
+  background: rgba(30, 122, 58, 0.10);
+  color: #1E7A3A;
+}
+
+.event-card--green .event-badge::before {
+  background: #1E7A3A;
+}
+
+.event-card--green .event-meta-item i {
+  color: #1E7A3A;
+}
+
+.event-card--green .btn-cta {
+  background: #1E7A3A;
+  border-color: #1E7A3A;
+}
+
+.event-card--green .btn-cta:hover {
+  background: #239144;
+  border-color: #239144;
+  box-shadow: 0 8px 25px rgba(30, 122, 58, 0.35);
+}
+
+.event-card--green .btn-cta:focus-visible {
+  outline-color: #1E7A3A;
+}
+
+/* Blue (2nd upcoming) */
+.event-card--blue .event-card-date,
+.event-card--blue .event-card-date-overlay {
+  background: linear-gradient(135deg, #1A5FA8 0%, #12437A 100%);
+}
+
+.event-card--blue:hover {
+  border-color: #1A5FA8;
+}
+
+.event-card--blue .event-badge {
+  background: rgba(26, 95, 168, 0.10);
+  color: #1A5FA8;
+}
+
+.event-card--blue .event-badge::before {
+  background: #1A5FA8;
+}
+
+.event-card--blue .event-meta-item i {
+  color: #1A5FA8;
+}
+
+.event-card--blue .btn-cta {
+  background: #1A5FA8;
+  border-color: #1A5FA8;
+}
+
+.event-card--blue .btn-cta:hover {
+  background: #2070C0;
+  border-color: #2070C0;
+  box-shadow: 0 8px 25px rgba(26, 95, 168, 0.35);
+}
+
+.event-card--blue .btn-cta:focus-visible {
+  outline-color: #1A5FA8;
+}
+
+/* Dark mode: desaturated badge colors for green/blue variants */
+[data-theme="dark"] .event-card--green .event-badge {
+  background: rgba(91, 191, 120, 0.12);
+  color: #5BBF78;
+}
+
+[data-theme="dark"] .event-card--green .event-badge::before {
+  background: #5BBF78;
+}
+
+[data-theme="dark"] .event-card--green .event-meta-item i {
+  color: #5BBF78;
+}
+
+[data-theme="dark"] .event-card--green:hover {
+  border-color: #5BBF78;
+}
+
+[data-theme="dark"] .event-card--green .btn-cta {
+  background: #1E7A3A;
+  border-color: #1E7A3A;
+}
+
+[data-theme="dark"] .event-card--green .btn-cta:hover {
+  background: #239144;
+  border-color: #239144;
+  box-shadow: 0 8px 25px rgba(30, 122, 58, 0.35);
+}
+
+[data-theme="dark"] .event-card--blue .event-badge {
+  background: rgba(91, 159, 219, 0.12);
+  color: #5B9FDB;
+}
+
+[data-theme="dark"] .event-card--blue .event-badge::before {
+  background: #5B9FDB;
+}
+
+[data-theme="dark"] .event-card--blue .event-meta-item i {
+  color: #5B9FDB;
+}
+
+[data-theme="dark"] .event-card--blue:hover {
+  border-color: #5B9FDB;
+}
+
+[data-theme="dark"] .event-card--blue .btn-cta {
+  background: #1A5FA8;
+  border-color: #1A5FA8;
+}
+
+[data-theme="dark"] .event-card--blue .btn-cta:hover {
+  background: #2070C0;
+  border-color: #2070C0;
+  box-shadow: 0 8px 25px rgba(26, 95, 168, 0.35);
+}
+
 .event-card--home-sm {
   display: flex;
   flex-direction: row;

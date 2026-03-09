@@ -94,10 +94,14 @@
     return dateStr.split('-')[0];
   }
 
+  /* ── Color order: 1st = green, 2nd = blue, 3rd = accent (default) ── */
+  var COLOR_CLASSES = ['event-card--green', 'event-card--blue', ''];
+
   /* ── Render the featured (highlighted) card ── */
-  function renderFeatured(event) {
+  function renderFeatured(event, colorIdx) {
+    var colorClass = COLOR_CLASSES[colorIdx] || '';
     return '<div class="col-12 col-lg-8" role="listitem">' +
-      '<article class="event-card event-card--featured reveal">' +
+      '<article class="event-card event-card--featured reveal' + (colorClass ? ' ' + colorClass : '') + '">' +
         '<div class="event-card-date">' +
           '<span class="event-day">' + formatDay(event.date) + '</span>' +
           '<span class="event-month">' + formatMonth(event.date) + '</span>' +
@@ -119,9 +123,10 @@
   }
 
   /* ── Render a small grid card ── */
-  function renderSmall(event) {
+  function renderSmall(event, colorIdx) {
+    var colorClass = COLOR_CLASSES[colorIdx] || '';
     return '<div class="col-12 col-md-6 col-lg-4" role="listitem">' +
-      '<article class="event-card event-card--home-sm reveal">' +
+      '<article class="event-card event-card--home-sm reveal' + (colorClass ? ' ' + colorClass : '') + '">' +
         '<div class="event-card-date event-card-date--sm">' +
           '<span class="event-day">' + formatDay(event.date) + '</span>' +
           '<span class="event-month">' + formatMonth(event.date) + '</span>' +
@@ -160,13 +165,14 @@
     var small = upcoming.slice(0, 2);
 
     // Build layout: featured on top row, small cards below
+    // Color order: 0=green, 1=blue, 2=accent
     var html = '<div class="col-12"><div class="row g-4 justify-content-center">' +
-      renderFeatured(featured) +
+      renderFeatured(featured, 0) +
     '</div></div>';
 
     if (small.length > 0) {
       html += '<div class="col-12"><div class="row g-4 justify-content-center" style="margin-top: var(--space-4)">';
-      small.forEach(function (ev) { html += renderSmall(ev); });
+      small.forEach(function (ev, i) { html += renderSmall(ev, i + 1); });
       html += '</div></div>';
     }
 
