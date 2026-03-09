@@ -4,6 +4,9 @@ assets/fontawesome-pro-5-web/
 # FontAwesome web bundle
 assets/fontawesome-web/
 
+# Example/demo files
+assets/example/
+
 # macOS system files
 .DS_Store
 **/.DS_Store

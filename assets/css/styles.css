@@ -1515,6 +1515,94 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 
 /* ═══════════════════════════════════════════
+   CONTACT PAGE
+   ═══════════════════════════════════════════ */
+.contact-hero {
+  padding-block: var(--space-xl) var(--space-lg);
+}
+
+.contact-hero .contact-intro {
+  color: rgba(255, 255, 255, .85);
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* Big CTA button on home page */
+.btn-cta--big {
+  font-size: clamp(1.1rem, 1vw + .9rem, 1.35rem);
+  padding: 1.1rem 3rem;
+  margin-top: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Contact info card (sidebar) */
+.contact-info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.contact-info-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  color: var(--heading);
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-info-list li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--text);
+}
+
+.contact-info-list a {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--motion-fast);
+}
+
+.contact-info-list a:hover {
+  color: var(--accent);
+}
+
+.contact-info-list i {
+  width: 1.25rem;
+  text-align: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-social {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-md);
+}
+
+.contact-social-label {
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--heading);
+}
+
+
+/* ═══════════════════════════════════════════
    ABOUT TRIPTYCH (landing summary)
    ═══════════════════════════════════════════ */
 .about-triptych {
@@ -1885,6 +1973,380 @@ ul { list-style: none; margin: 0; padding: 0; }
 .event-card .btn-cta {
   align-self: flex-start;
   margin-top: var(--space-2);
+}
+
+
+/* ═══════════════════════════════════════════
+   HOME EVENTS — Small cards
+   ═══════════════════════════════════════════ */
+.event-card--home-sm {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.event-card-date--sm {
+  min-width: 100px;
+  padding: var(--space-4) var(--space-3);
+}
+
+.event-card-date--sm .event-day {
+  font-size: var(--text-3xl);
+}
+
+.event-card-date--sm .event-month {
+  font-size: var(--text-base);
+}
+
+.event-title--sm {
+  font-size: var(--text-lg);
+}
+
+.event-card--home-sm .event-card-body {
+  padding: var(--space-4) var(--space-6);
+}
+
+.event-card--home-sm .event-badge--sm {
+  font-size: 0.65rem;
+  padding: 2px var(--space-2);
+}
+
+@media (max-width: 575.98px) {
+  .event-card--home-sm {
+    flex-direction: column;
+  }
+
+  .event-card-date--sm {
+    flex-direction: row;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .event-card-date--sm .event-day {
+    font-size: var(--text-2xl);
+  }
+}
+
+
+/* ═══════════════════════════════════════════
+   EVENTS PAGE
+   ═══════════════════════════════════════════ */
+
+/* Hero — extra top padding for fixed header */
+.events-page-hero {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  padding-bottom: var(--space-8);
+}
+
+/* Filter tabs */
+.events-filter {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.events-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-6);
+  min-height: 44px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.events-filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.events-filter-btn.active,
+.events-filter-btn[aria-selected="true"] {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  border-color: var(--color-accent);
+}
+
+.events-filter-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Featured section on events page */
+.events-featured-section {
+  padding-top: calc(var(--space-16) + 3vw);
+  padding-bottom: calc(var(--space-16) + 3vw);
+}
+
+/* Events page card — featured with image */
+.event-card--page {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+}
+
+.event-card-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  max-height: 360px;
+}
+
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.event-card--page:hover .event-card-image img {
+  transform: scale(1.04);
+}
+
+.event-card-date-overlay {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #8B2E18 100%);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1;
+}
+
+.event-card-date-overlay .event-day {
+  font-size: var(--text-4xl);
+}
+
+.event-card-date-overlay .event-month {
+  font-size: var(--text-base);
+}
+
+.event-card-date-overlay--sm {
+  padding: var(--space-2) var(--space-3);
+}
+
+.event-card-date-overlay--sm .event-day {
+  font-size: var(--text-3xl);
+}
+
+.event-card-date-overlay--sm .event-month {
+  font-size: var(--text-sm);
+}
+
+/* Badges row */
+.event-badges-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.event-category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background: color-mix(in srgb, var(--color-secondary) 12%, transparent);
+  color: var(--color-secondary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+}
+
+.event-category-badge--sm {
+  font-size: 0.65rem;
+  padding: 2px var(--space-2);
+}
+
+.event-badge--past {
+  background: var(--color-surface-raised);
+  color: var(--color-text-muted);
+}
+
+.event-badge--past::before {
+  display: none;
+}
+
+.event-badge--sm {
+  font-size: 0.65rem;
+  padding: 2px var(--space-2);
+}
+
+/* Grid card */
+.event-card--grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-card-image--grid {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.event-card-image--grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.event-card--grid:hover .event-card-image--grid img {
+  transform: scale(1.04);
+}
+
+.event-title--grid {
+  font-size: var(--text-xl);
+}
+
+.event-desc--grid {
+  font-size: var(--text-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-card--grid .event-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card--grid .btn-cta {
+  margin-top: auto;
+}
+
+/* Small CTA variant */
+.btn-cta--sm {
+  padding: var(--space-2) var(--space-6);
+  min-height: 40px;
+  font-size: var(--text-sm);
+}
+
+/* CTA light variant for accent sections */
+.btn-cta--light {
+  background: var(--color-accent-text);
+  color: var(--color-accent);
+  border-color: var(--color-accent-text);
+}
+
+.btn-cta--light:hover {
+  background: transparent;
+  color: var(--color-accent-text);
+  border-color: var(--color-accent-text);
+}
+
+.events-cta-text {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 50ch;
+  margin: 0 auto var(--space-8);
+  font-weight: 300;
+}
+
+/* Grid section title */
+.events-grid-title {
+  margin-bottom: var(--space-8);
+}
+
+/* Empty state */
+.events-empty {
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.events-empty-icon {
+  font-size: var(--text-5xl);
+  color: var(--color-text-muted);
+  opacity: 0.4;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.events-empty-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+/* Dark mode overrides for events page */
+[data-theme="dark"] .event-card--page,
+[data-theme="dark"] .event-card--grid {
+  border-color: #2A2A36;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), var(--shadow-sm);
+}
+
+[data-theme="dark"] .event-card-image img {
+  filter: brightness(0.88) contrast(1.05);
+}
+
+[data-theme="dark"] .event-card--page:hover .event-card-image img,
+[data-theme="dark"] .event-card--grid:hover .event-card-image--grid img {
+  filter: brightness(1) contrast(1);
+}
+
+[data-theme="dark"] .events-filter-btn.active,
+[data-theme="dark"] .events-filter-btn[aria-selected="true"] {
+  background: #B04027;
+  border-color: #B04027;
+}
+
+[data-theme="dark"] .btn-cta--light {
+  background: var(--color-accent-text);
+  color: #B04027;
+  border-color: var(--color-accent-text);
+}
+
+/* Responsive — Events page mobile */
+@media (max-width: 991.98px) {
+  .event-card--page {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card-image {
+    min-height: 240px;
+  }
+
+  .events-page-hero {
+    padding-top: calc(var(--header-height) + var(--space-12));
+  }
+
+  .events-featured-section {
+    padding-top: calc(var(--space-12) + 2vw);
+    padding-bottom: calc(var(--space-12) + 2vw);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .events-filter {
+    gap: var(--space-1);
+  }
+
+  .events-filter-btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .event-card-image--grid {
+    height: 180px;
+  }
 }
 
 
