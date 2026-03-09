@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce a Tania Angulo — entrenadora personal, monitora de clases dirigidas y especialista en postparto en Alicante.">
+  <title>Sobre mí — GetFitByTania · Tania Angulo</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome 5.15.4 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Skip link — WCAG 2.4.1 bypass blocks -->
+  <a href="#main-content" class="skip-link" data-i18n="skipLink">Saltar al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER (banner landmark)
+       ═══════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Brand -->
+        <a href="../index.html" class="brand" data-i18n-aria-label="brandLabel" aria-label="GetFitByTania — Inicio">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-text">GetFit<strong>ByTania</strong></span>
+        </a>
+
+        <!-- Primary navigation -->
+        <nav aria-label="Main">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            data-i18n-aria-label="navToggleLabel"
+            aria-label="Abrir menú de navegación"
+          >
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <ul id="main-nav" class="nav-list" role="list">
+            <li><a href="../index.html" class="nav-link" data-i18n="navHome">Inicio</a></li>
+            <li class="nav-dropdown">
+              <button
+                class="nav-link nav-dropdown-toggle active"
+                aria-current="true"
+                aria-expanded="false"
+                aria-controls="dropdown-about"
+                data-i18n="navAbout"
+              >Sobre mí <i class="fas fa-chevron-down nav-dropdown-icon" aria-hidden="true"></i></button>
+              <ul id="dropdown-about" class="nav-dropdown-menu" role="list">
+                <li><a href="#disciplines" class="nav-link" data-i18n="navDisciplines">Disciplinas</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="navExperience">Experiencia</a></li>
+                <li><a href="#gallery" class="nav-link" data-i18n="navGallery">Galería</a></li>
+              </ul>
+            </li>
+            <li><a href="../index.html#events" class="nav-link" data-i18n="navEvents">Eventos</a></li>
+            <li><a href="../index.html#blog" class="nav-link" data-i18n="navBlog">Blog</a></li>
+            <li><a href="../index.html#contact" class="nav-link" data-i18n="navContact">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header actions (visible on desktop, hidden on mobile) -->
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" data-i18n-aria-label="langSwitcherLabel" aria-label="Seleccionar idioma">
+            <button class="lang-btn active" aria-pressed="true" data-lang="es">ES</button>
+            <button class="lang-btn" aria-pressed="false" data-lang="en">EN</button>
+            <button class="lang-btn" aria-pressed="false" data-lang="pt">PT</button>
+          </div>
+          <button class="theme-toggle" data-i18n-aria-label="themeToggleLabel" aria-label="Cambiar a modo oscuro">
+            <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+            <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+          </button>
+          <button class="font-size-toggle" data-i18n-aria-label="fontSizeLabel" aria-label="Aumentar tamaño de fuente" aria-live="polite">
+            <span class="font-size-icon" aria-hidden="true">A</span>
+            <span class="font-size-value" aria-hidden="true">100%</span>
+          </button>
+        </div>
+
+        <!-- Settings toggle (mobile only — cog icon) -->
+        <button class="settings-toggle" aria-expanded="false" aria-controls="settings-panel" data-i18n-aria-label="settingsToggleLabel" aria-label="Abrir ajustes">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </button>
+
+        <!-- Settings panel (mobile — slides from right) -->
+        <div id="settings-panel" class="settings-panel" aria-label="Ajustes" role="region">
+          <div class="settings-panel-inner">
+            <div class="lang-switcher lang-switcher--mobile" role="group" data-i18n-aria-label="langSwitcherLabel" aria-label="Seleccionar idioma">
+              <button class="lang-btn active" aria-pressed="true" data-lang="es">ES</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="en">EN</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="pt">PT</button>
+            </div>
+            <button class="theme-toggle theme-toggle--mobile" data-i18n-aria-label="themeToggleLabel" aria-label="Cambiar a modo oscuro">
+              <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+              <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+            </button>
+            <button class="font-size-toggle font-size-toggle--mobile" data-i18n-aria-label="fontSizeLabel" aria-label="Aumentar tamaño de fuente" aria-live="polite">
+              <span class="font-size-icon" aria-hidden="true">A</span>
+              <span class="font-size-value" aria-hidden="true">100%</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN (main landmark)
+       ═══════════════════════════════════════════ -->
+  <main id="main-content">
+
+
+    <!-- ─── ABOUT HERO ─── -->
+    <section id="about" class="section about-page-hero" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="row g-3 g-lg-5 align-items-center">
+          <div class="col-12 col-lg-5">
+            <div class="about-visual">
+              <div class="geo-circle geo-circle--lg" aria-hidden="true"></div>
+              <div class="geo-circle geo-circle--sm" aria-hidden="true"></div>
+              <div class="about-photo-frame">
+                <img src="../assets/pics/TaniaAngym.jpg"
+                     alt="Tania entrenando en el gimnasio"
+                     data-i18n-alt="aboutImgAlt"
+                     class="about-photo"
+                     loading="eager"
+                     width="1080" height="1264">
+              </div>
+              <div class="about-card">
+                <div class="about-card-accent"></div>
+                <div class="about-stats">
+                  <div class="stat">
+                    <span class="stat-number">+5</span>
+                    <span class="stat-label" data-i18n="statYears">Años de experiencia</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label" data-i18n="statDisciplines">Disciplinas</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label" data-i18n="statLanguages">Idiomas</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label" data-i18n="statPersonalized">Personalizado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <h1 id="about-heading" class="section-title" data-i18n="aboutHeading">Sobre mí</h1>
+            <div class="about-text">
+              <p data-i18n="aboutP1">Soy entrenadora personal y monitora de clases dirigidas. Mi experiencia como mamá me llevó a prepararme en Gimnasia Hipopresiva y técnicas de entrenamiento postparto. Ahora ayudo a otras madres a recuperar su figura y sentirse mejor.</p>
+              <p data-i18n="aboutP2">Con una energía arrolladora, mi metodología es muy personalizada. Trabajo tanto con jóvenes que quieran mejorar su físico y estado de salud, como con personas de mayor edad que necesiten ganar en calidad de vida y mantenerse activos y sanos.</p>
+              <p data-i18n="aboutP3">Di un giro profesional desde el servicio al cliente en Barcelona hacia el mundo del fitness. Me he formado en varias disciplinas deportivas y sigo reciclándome y preparándome para rendir al máximo cada día.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── DISCIPLINES ─── -->
+    <section id="disciplines" class="section" aria-labelledby="disciplines-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="disciplines-heading" class="section-title" data-i18n="disciplinesHeading">Disciplinas</h2>
+          <p class="section-subtitle" data-i18n="disciplinesSubtitle">Formada en múltiples disciplinas para ofrecerte el entrenamiento que necesitas</p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-child"></i></div>
+              <h3 class="discipline-name">Pilates</h3>
+              <p class="discipline-desc" data-i18n="discPilates">Fortalece tu core, mejora tu postura y flexibilidad</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-spa"></i></div>
+              <h3 class="discipline-name" data-i18n="discBodyMindTitle">Cuerpo & Mente</h3>
+              <p class="discipline-desc" data-i18n="discBodyMind">Conecta cuerpo y mente para un bienestar integral</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-wind"></i></div>
+              <h3 class="discipline-name" data-i18n="discHypopressiveTitle">Gimnasia Hipopresiva</h3>
+              <p class="discipline-desc" data-i18n="discHypopressive">Recuperación postparto y fortalecimiento del suelo pélvico</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div>
+              <h3 class="discipline-name">Cross Training</h3>
+              <p class="discipline-desc" data-i18n="discCross">Entrenamiento de alta intensidad para superar tus límites</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-running"></i></div>
+              <h3 class="discipline-name" data-i18n="discFunctionalTitle">Entrenamiento Funcional</h3>
+              <p class="discipline-desc" data-i18n="discFunctional">Movimientos reales para la vida real</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-bicycle"></i></div>
+              <h3 class="discipline-name" data-i18n="discCyclingTitle">Ciclo Indoor</h3>
+              <p class="discipline-desc" data-i18n="discCycling">Cardio intenso con energía grupal</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-weight-hanging"></i></div>
+              <h3 class="discipline-name" data-i18n="discStrengthTitle">Musculación</h3>
+              <p class="discipline-desc" data-i18n="discStrength">Construye fuerza, gana confianza</p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="discipline-card">
+              <div class="discipline-icon" aria-hidden="true"><i class="fas fa-swimmer"></i></div>
+              <h3 class="discipline-name">Aqua Dance</h3>
+              <p class="discipline-desc" data-i18n="discAqua">Diversión acuática con resultados reales</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── EXPERIENCE ─── -->
+    <section id="experience" class="section section--raised" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="experience-heading" class="section-title" data-i18n="experienceHeading">Experiencia</h2>
+          <p class="section-subtitle" data-i18n="experienceSubtitle">Mi trayectoria profesional en el mundo del fitness</p>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title">NH Concept</h3>
+                <span class="timeline-meta">Alicante · <time datetime="2025-04">Abr 2025</time> — <span data-i18n="present">Actualmente</span></span>
+              </div>
+              <p class="timeline-desc" data-i18n="expNh">Preparadora física para deportistas. Clases de Pilates y Funcionales.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Total Body Pilates</h3>
+                <span class="timeline-meta">Alicante · <time datetime="2024-09">Sep 2024</time> — <time datetime="2025-03">Mar 2025</time></span>
+              </div>
+              <p class="timeline-desc" data-i18n="expTotalBody">Clases de Pilates, Funcionales y Bungee.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Altafit</h3>
+                <span class="timeline-meta">San Vicente, Alicante · <time datetime="2022-01">Ene 2022</time> — <time datetime="2024-08">Ago 2024</time></span>
+              </div>
+              <p class="timeline-desc" data-i18n="expAltafit">Clases dirigidas con música, Ciclo Indoor, Cross Training, Pilates. Acompañamiento en sala fitness.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title" data-i18n="expGym24hTitle">Gimnasio 24H</h3>
+                <span class="timeline-meta">San Juan, Alicante · <time datetime="2019-11">Nov 2019</time> — <time datetime="2022-06">Jun 2022</time></span>
+              </div>
+              <p class="timeline-desc" data-i18n="expGym24h">Planes de entrenamiento personalizados, asesoramiento nutricional. Clases de Pilates, TRX, GAP y Cuerpo & Mente.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Formation sub-section -->
+        <div class="formation-block" id="formation">
+          <h3 class="subsection-title" data-i18n="formationHeading">Formación</h3>
+          <div class="row g-4">
+
+            <div class="col-12 col-md-6">
+              <article class="formation-card">
+                <div class="formation-year">2024</div>
+                <h4 class="formation-title" data-i18n="formAcredita">Certificación Profesional Nivel III — Área Deporte</h4>
+                <p class="formation-org">Acredita</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="formation-card">
+                <div class="formation-year">2020</div>
+                <h4 class="formation-title" data-i18n="formHypopressive">Gimnasia Hipopresiva y Acondicionamiento Físico Postparto</h4>
+                <p class="formation-org">APTA Vital Sport</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="formation-card">
+                <div class="formation-year">2019</div>
+                <h4 class="formation-title" data-i18n="formFeda">Entrenamiento Personal · Nutrición Deportiva · Coaching</h4>
+                <p class="formation-org">FEDA — Federación Española de Actividades Dirigidas</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="formation-card">
+                <div class="formation-year">2019</div>
+                <h4 class="formation-title" data-i18n="formApta">Monitora de Actividades Dirigidas con Soporte Musical</h4>
+                <p class="formation-org">APTA Vital Sport</p>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── GALLERY ─── -->
+    <section id="gallery" class="section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="gallery-heading" class="section-title" data-i18n="galleryHeading">Galería</h2>
+          <p class="section-subtitle" data-i18n="gallerySubtitle">Momentos de entrenamiento, clases y estilo de vida saludable</p>
+        </div>
+
+        <div class="gallery-masonry" role="list">
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/TaniaAngulohipopresivosalicante.jpg"
+                 alt="Tania enseñando hipopresivos en Alicante"
+                 data-i18n-alt="galHipo"
+                 loading="lazy" width="3236" height="5033">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20191018_140143.jpg"
+                 alt="Sesión de entrenamiento personal"
+                 data-i18n-alt="galTraining1"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20190918_115133.jpg"
+                 alt="Clase dirigida en el gimnasio"
+                 data-i18n-alt="galClass1"
+                 loading="lazy" width="4032" height="3024">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20191115_085359.jpg"
+                 alt="Entrenamiento funcional en grupo"
+                 data-i18n-alt="galFunctional"
+                 loading="lazy" width="4623" height="3461">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20191105_114646.jpg"
+                 alt="Tania durante sesión de cross training"
+                 data-i18n-alt="galCross"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20200125_082523.jpg"
+                 alt="Preparación de rutina de ejercicios"
+                 data-i18n-alt="galRoutine"
+                 loading="lazy" width="3024" height="4032">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20190528_181829.jpg"
+                 alt="Estilo de vida saludable y fitness"
+                 data-i18n-alt="galLifestyle"
+                 loading="lazy" width="2400" height="1350">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20191218_141414.jpg"
+                 alt="Sesión de pilates"
+                 data-i18n-alt="galPilates"
+                 loading="lazy" width="4000" height="4000">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/TaniaAng1.jpg"
+                 alt="Tania Angulo, entrenadora personal"
+                 data-i18n-alt="galPortrait"
+                 loading="lazy" width="2200" height="1994">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20200102_174522.jpg"
+                 alt="Nutrición y alimentación saludable"
+                 data-i18n-alt="galNutrition"
+                 loading="lazy" width="3024" height="3024">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20190524_153755.jpg"
+                 alt="Ejercicio al aire libre"
+                 data-i18n-alt="galOutdoor"
+                 loading="lazy" width="2875" height="3637">
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="../assets/pics/IMG_20191127_193939.jpg"
+                 alt="Clase de ciclo indoor"
+                 data-i18n-alt="galCycling"
+                 loading="lazy" width="4623" height="3461">
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER (contentinfo landmark)
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="../index.html" class="footer-brand-link">
+            <span class="footer-brand-mark" aria-hidden="true">G</span>
+            <span class="footer-brand-name">GetFit<strong>ByTania</strong></span>
+          </a>
+          <p class="footer-tagline" data-i18n="footerTagline">Entrenamiento personal y clases dirigidas en Alicante.</p>
+          <nav aria-label="Social media">
+            <ul class="social-links" role="list">
+              <li><a href="https://www.instagram.com/tania.angulo_trainer" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="instagramLabel" aria-label="Instagram (abre en ventana nueva)"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/tanitaangulo" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="facebookLabel" aria-label="Facebook (abre en ventana nueva)"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+              <li><a href="https://wa.me/34620098860" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="whatsappLabel" aria-label="WhatsApp (abre en ventana nueva)"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footerNav">Navegación</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="../index.html" data-i18n="navHome">Inicio</a></li>
+            <li><a href="../about/" data-i18n="navAbout">Sobre mí</a></li>
+            <li><a href="../index.html#events" data-i18n="navEvents">Eventos</a></li>
+            <li><a href="../index.html#blog" data-i18n="navBlog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footerDisciplines">Disciplinas</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#disciplines">Pilates</a></li>
+            <li><a href="#disciplines" data-i18n="discFunctionalTitle">Entrenamiento Funcional</a></li>
+            <li><a href="#disciplines" data-i18n="discHypopressiveTitle">Gimnasia Hipopresiva</a></li>
+            <li><a href="#disciplines">Cross Training</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footerContact">Contacto</h3>
+          <ul class="footer-links footer-links--contact" role="list">
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Alicante, España</li>
+            <li><a href="https://wa.me/34620098860" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> +34 620 098 860</a></li>
+            <li><a href="https://www.instagram.com/tania.angulo_trainer" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @tania.angulo_trainer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year"></span> Tania Angulo. <span data-i18n="footerRights">Todos los derechos reservados.</span></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Live region for status announcements (WCAG 4.1.3) -->
+  <div id="a11y-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

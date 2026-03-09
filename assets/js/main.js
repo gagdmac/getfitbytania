@@ -33,6 +33,8 @@
       navGallery: 'Galería',
       navExperience: 'Experiencia',
       navContact: 'Contacto',
+      navEvents: 'Eventos',
+      navBlog: 'Blog',
 
       // Hero
       heroEyebrow: 'Tania Angulo · Alicante',
@@ -125,6 +127,40 @@
 
       // Footer
       footerRights: 'Todos los derechos reservados.',
+      footerTagline: 'Entrenamiento personal y clases dirigidas en Alicante.',
+      footerNav: 'Navegación',
+      footerDisciplines: 'Disciplinas',
+      footerContactTitle: 'Contacto',
+
+      // About summary
+      aboutSummarySubtitle: 'Entrenadora personal, monitora y especialista postparto en Alicante',
+      aboutSummaryP1: 'Soy entrenadora personal y monitora de clases dirigidas. Mi experiencia como mamá me llevó a especializarme en Gimnasia Hipopresiva y postparto. Trabajo con personas de todas las edades para mejorar su salud y calidad de vida.',
+      aboutCtaMore: 'Conoce mi historia',
+
+      // Events
+      eventsHeading: 'Eventos',
+      eventsSubtitle: 'Próximas actividades y experiencias de entrenamiento',
+      eventBadgeUpcoming: 'Próximamente',
+      eventTitle1: 'Masterclass Hipopresivos al Aire Libre',
+      eventDesc1: 'Sesión especial de gimnasia hipopresiva en la playa de San Juan. Abierta a todos los niveles. Aprende técnicas de respiración y fortalecimiento del suelo pélvico con el sonido del mar.',
+      eventLocation1: 'Playa de San Juan, Alicante',
+      eventSpots1: '15 plazas',
+      eventMonth1: 'MAR',
+      eventCta: 'Reserva tu plaza',
+
+      // Blog
+      blogHeading: 'Blog',
+      blogSubtitle: 'Consejos, rutinas y novedades del mundo fitness',
+      blogCatNutrition: 'Nutrición',
+      blogCatTraining: 'Entrenamiento',
+      blogTitle1: '5 desayunos saludables para antes de entrenar',
+      blogExcerpt1: 'Descubre qué comer antes del entrenamiento para rendir al máximo. Opciones rápidas, nutritivas y deliciosas que se preparan en menos de 10 minutos.',
+      blogTitle2: 'Hipopresivos postparto: cuándo y cómo empezar',
+      blogExcerpt2: 'Guía completa sobre gimnasia hipopresiva después del embarazo. Cuándo es seguro comenzar, beneficios y ejercicios básicos para recuperar tu suelo pélvico.',
+      blogCatWellbeing: 'Bienestar',
+      blogTitle3: 'Rutina matutina: 15 minutos que cambian tu día',
+      blogExcerpt3: 'No necesitas una hora en el gimnasio para activar tu cuerpo. Te enseño una rutina de movilidad y respiración que puedes hacer en casa nada más levantarte.',
+      blogReadMore: 'Leer más',
     },
 
     en: {
@@ -150,6 +186,8 @@
       navGallery: 'Gallery',
       navExperience: 'Experience',
       navContact: 'Contact',
+      navEvents: 'Events',
+      navBlog: 'Blog',
 
       heroEyebrow: 'Tania Angulo · Alicante, Spain',
       heroTitle: 'Your transformation starts here',
@@ -234,6 +272,38 @@
       errorEmailInvalid: 'Enter a valid email (e.g. name@domain.com).',
       errorMessageRequired: 'Please write your message.',
 
+      footerTagline: 'Your transformation starts here.',
+      footerNav: 'Navigation',
+      footerDisciplines: 'Disciplines',
+      footerContactTitle: 'Contact',
+
+      aboutSummarySubtitle: 'Personal Trainer & Sports Nutrition',
+      aboutSummaryP1: 'With over 10 years of experience in personal training and group classes, I help you reach your goals with customized plans tailored to your body and lifestyle.',
+      aboutCtaMore: 'Learn more about me',
+
+      eventsHeading: 'Events',
+      eventsSubtitle: 'Join our next activities and challenges.',
+      eventBadgeUpcoming: 'Upcoming',
+      eventTitle1: 'Summer Bootcamp 2025',
+      eventDesc1: 'An intensive outdoor week combining strength training, HIIT, and nutrition workshops. All levels welcome.',
+      eventLocation1: 'Parque del Retiro, Madrid',
+      eventSpots1: '12 spots remaining',
+      eventMonth1: 'JUL',
+      eventCta: 'Reserve your spot',
+
+      blogHeading: 'Blog',
+      blogSubtitle: 'Tips, science, and motivation for your fitness journey.',
+      blogCatNutrition: 'Nutrition',
+      blogCatTraining: 'Training',
+      blogTitle1: '5 Post-Workout Meals That Taste Amazing',
+      blogExcerpt1: 'Recovering right is just as important as training hard. Discover recipes that are delicious, quick, and designed to maximize your results.',
+      blogTitle2: 'Strength Training for Beginners: Where to Start',
+      blogExcerpt2: 'Forget the myths. Lifting weights won\'t make you bulky — it\'ll transform your body, strengthen your bones, and boost your metabolism.',
+      blogCatWellbeing: 'Wellbeing',
+      blogTitle3: 'Morning Routine: 15 Minutes That Change Your Day',
+      blogExcerpt3: 'You don\'t need an hour at the gym to activate your body. I\'ll show you a mobility and breathing routine you can do at home the moment you wake up.',
+      blogReadMore: 'Read article',
+
       footerRights: 'All rights reserved.',
     },
 
@@ -258,6 +328,8 @@
       navGallery: 'Galeria',
       navExperience: 'Experiência',
       navContact: 'Contato',
+      navEvents: 'Eventos',
+      navBlog: 'Blog',
 
       heroEyebrow: 'Tania Angulo · Alicante, Espanha',
       heroTitle: 'A sua transformação começa aqui',
@@ -341,6 +413,38 @@
       errorEmailRequired: 'Por favor, insira seu email.',
       errorEmailInvalid: 'Insira um email válido (ex. nome@dominio.com).',
       errorMessageRequired: 'Por favor, escreva sua mensagem.',
+
+      footerTagline: 'A sua transformação começa aqui.',
+      footerNav: 'Navegação',
+      footerDisciplines: 'Disciplinas',
+      footerContactTitle: 'Contato',
+
+      aboutSummarySubtitle: 'Personal Trainer & Nutrição Esportiva',
+      aboutSummaryP1: 'Com mais de 10 anos de experiência em treino pessoal e aulas coletivas, ajudo você a atingir os seus objetivos com planos personalizados ao seu corpo e estilo de vida.',
+      aboutCtaMore: 'Saiba mais sobre mim',
+
+      eventsHeading: 'Eventos',
+      eventsSubtitle: 'Junte-se às nossas próximas atividades e desafios.',
+      eventBadgeUpcoming: 'Em breve',
+      eventTitle1: 'Bootcamp de Verão 2025',
+      eventDesc1: 'Uma semana intensiva ao ar livre combinando treino de força, HIIT e workshops de nutrição. Todos os níveis são bem-vindos.',
+      eventLocation1: 'Parque del Retiro, Madrid',
+      eventSpots1: '12 vagas restantes',
+      eventMonth1: 'JUL',
+      eventCta: 'Reserve a sua vaga',
+
+      blogHeading: 'Blog',
+      blogSubtitle: 'Dicas, ciência e motivação para a sua jornada fitness.',
+      blogCatNutrition: 'Nutrição',
+      blogCatTraining: 'Treino',
+      blogTitle1: '5 Refeições Pós-Treino Deliciosas',
+      blogExcerpt1: 'Recuperar bem é tão importante como treinar forte. Descubra receitas deliciosas, rápidas e pensadas para maximizar os seus resultados.',
+      blogTitle2: 'Musculação para Iniciantes: Por Onde Começar',
+      blogExcerpt2: 'Esqueça os mitos. Levantar pesos não vai deixá-la volumosa — vai transformar o seu corpo, fortalecer os ossos e acelerar o metabolismo.',
+      blogCatWellbeing: 'Bem-estar',
+      blogTitle3: 'Rotina Matinal: 15 Minutos Que Mudam o Seu Dia',
+      blogExcerpt3: 'Não precisa de uma hora no ginásio para ativar o corpo. Mostro-lhe uma rotina de mobilidade e respiração que pode fazer em casa assim que acordar.',
+      blogReadMore: 'Ler artigo',
 
       footerRights: 'Todos os direitos reservados.',
     },
@@ -609,28 +713,142 @@
   }
 
 
+  /* ── NAV DROPDOWN (About me) ── */
+  function initNavDropdown() {
+    var dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(function (dropdown) {
+      var toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      var menu = dropdown.querySelector('.nav-dropdown-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        closeAllDropdowns();
+        if (!expanded) {
+          toggle.setAttribute('aria-expanded', 'true');
+          menu.hidden = false;
+          var firstLink = menu.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      });
+
+      // Keyboard navigation inside dropdown
+      dropdown.addEventListener('keydown', function (e) {
+        var links = Array.from(menu.querySelectorAll('a'));
+        var idx = links.indexOf(document.activeElement);
+
+        if (e.key === 'Escape') {
+          closeDropdown(toggle, menu);
+          toggle.focus();
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (toggle.getAttribute('aria-expanded') !== 'true') {
+            toggle.setAttribute('aria-expanded', 'true');
+            menu.hidden = false;
+          }
+          var next = idx < links.length - 1 ? idx + 1 : 0;
+          links[next].focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (idx <= 0) {
+            closeDropdown(toggle, menu);
+            toggle.focus();
+          } else {
+            links[idx - 1].focus();
+          }
+        }
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        closeAllDropdowns();
+      }
+    });
+
+    function closeDropdown(toggle, menu) {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    }
+
+    function closeAllDropdowns() {
+      dropdowns.forEach(function (dd) {
+        var t = dd.querySelector('.nav-dropdown-toggle');
+        var m = dd.querySelector('.nav-dropdown-menu');
+        if (t && m) {
+          t.setAttribute('aria-expanded', 'false');
+          m.hidden = true;
+        }
+      });
+    }
+  }
+
+
   /* ── ACTIVE NAV HIGHLIGHT ── */
   function initActiveNav() {
     var sections = document.querySelectorAll('section[id]');
-    var navLinks = document.querySelectorAll('.nav-link');
+    var navLinks = document.querySelectorAll('.nav-link:not(.nav-dropdown-toggle)');
+    var dropdownToggle = document.querySelector('.nav-dropdown-toggle');
 
     if (!sections.length || !navLinks.length) return;
+
+    // Collect hrefs that live inside the dropdown
+    var dropdownHrefs = [];
+    // Collect section IDs that belong to the dropdown
+    var dropdownSectionIds = [];
+    if (dropdownToggle) {
+      var dropdownMenu = dropdownToggle.closest('.nav-dropdown');
+      if (dropdownMenu) {
+        dropdownMenu.querySelectorAll('.nav-dropdown-menu .nav-link').forEach(function (link) {
+          var href = link.getAttribute('href');
+          dropdownHrefs.push(href);
+          // Extract the hash part
+          var hash = href.indexOf('#') !== -1 ? href.substring(href.indexOf('#')) : href;
+          if (hash.charAt(0) === '#') dropdownSectionIds.push(hash.substring(1));
+        });
+      }
+    }
+
+    // Check if we are on the about page (dropdown toggle has active class in markup)
+    var isAboutPage = dropdownToggle && dropdownToggle.classList.contains('active');
 
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             var id = entry.target.getAttribute('id');
+            var anyDropdownChildActive = false;
+
             navLinks.forEach(function (link) {
               var href = link.getAttribute('href');
-              var isActive = href === '#' + id;
+              // Match both '#id' and 'path/#id' patterns
+              var isActive = href === '#' + id || href.endsWith('#' + id);
               link.classList.toggle('active', isActive);
               if (isActive) {
                 link.setAttribute('aria-current', 'true');
               } else {
                 link.removeAttribute('aria-current');
               }
+              // Check if the active link is inside the dropdown
+              if (isActive && dropdownHrefs.indexOf(href) !== -1) {
+                anyDropdownChildActive = true;
+              }
             });
+
+            // On the about page, keep dropdown toggle active
+            // when viewing any section (about hero or sub-sections)
+            if (dropdownToggle) {
+              var isDropdownSection = dropdownSectionIds.indexOf(id) !== -1;
+              var shouldBeActive = anyDropdownChildActive || isDropdownSection || isAboutPage;
+              dropdownToggle.classList.toggle('active', shouldBeActive);
+              if (shouldBeActive) {
+                dropdownToggle.setAttribute('aria-current', 'true');
+              } else {
+                dropdownToggle.removeAttribute('aria-current');
+              }
+            }
           }
         });
       },
@@ -656,6 +874,10 @@
       '.formation-card',
       '.contact-intro',
       '.contact-form',
+      '.about-triptych',
+      '.about-summary-content',
+      '.event-card',
+      '.blog-card',
     ];
 
     revealTargets.forEach(function (selector) {
@@ -832,6 +1054,9 @@
 
     // Mobile nav
     initMobileNav();
+
+    // Nav dropdowns
+    initNavDropdown();
 
     // Settings panel (mobile)
     initSettingsPanel();
