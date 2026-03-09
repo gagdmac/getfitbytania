@@ -1,6 +1,8 @@
 /* ═══════════════════════════════════════════════════════
    GetFitByTania — Events Page
-   Dynamic rendering from events.json
+   Rendering, filtering & interactions.
+   Receives event data via the `eventsReady` custom event
+   dispatched by events-builder.js.
    ═══════════════════════════════════════════════════════ */
 
 (function () {
@@ -61,10 +63,8 @@
     return localStorage.getItem('gfbt-lang') || 'es';
   }
 
-  function localized(obj) {
-    if (!obj) return '';
-    var lang = getLang();
-    return obj[lang] || obj.es || '';
+  function loc(event, field) {
+    return t('events.items.' + event.id + '.' + field);
   }
 
   function parseDate(dateStr) {
@@ -109,7 +109,7 @@
     return '<article class="event-card event-card--featured event-card--page reveal">' +
       '<div class="event-card-image">' +
         '<img src="' + escapeHtml(event.image) + '" ' +
-          'alt="' + escapeHtml(localized(event.imageAlt)) + '" ' +
+          'alt="' + escapeHtml(loc(event, 'imageAlt')) + '" ' +
           'loading="eager" ' +
           'width="' + event.imageWidth + '" height="' + event.imageHeight + '">' +
         '<div class="event-card-date-overlay">' +
@@ -121,12 +121,12 @@
       '<div class="event-card-body">' +
         '<div class="event-badges-row">' +
           '<span class="event-badge' + badgeClass + '">' + escapeHtml(badgeText) + '</span>' +
-          '<span class="event-category-badge">' + escapeHtml(localized(event.category)) + '</span>' +
+          '<span class="event-category-badge">' + escapeHtml(loc(event, 'category')) + '</span>' +
         '</div>' +
-        '<h3 class="event-title">' + escapeHtml(localized(event.title)) + '</h3>' +
-        '<p class="event-desc">' + escapeHtml(localized(event.description)) + '</p>' +
+        '<h3 class="event-title">' + escapeHtml(loc(event, 'title')) + '</h3>' +
+        '<p class="event-desc">' + escapeHtml(loc(event, 'description')) + '</p>' +
         '<div class="event-meta-row">' +
-          '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(localized(event.location)) + '</span>' +
+          '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(loc(event, 'location')) + '</span>' +
           '<span class="event-meta-item"><i class="fas fa-clock" aria-hidden="true"></i> ' + escapeHtml(event.time) + '</span>' +
           '<span class="event-meta-item"><i class="fas fa-users" aria-hidden="true"></i> ' + event.spots + ' ' + escapeHtml(t('events.spots')) + '</span>' +
         '</div>' +
@@ -144,7 +144,7 @@
       '<article class="event-card event-card--grid reveal">' +
         '<div class="event-card-image event-card-image--grid">' +
           '<img src="' + escapeHtml(event.image) + '" ' +
-            'alt="' + escapeHtml(localized(event.imageAlt)) + '" ' +
+            'alt="' + escapeHtml(loc(event, 'imageAlt')) + '" ' +
             'loading="lazy" ' +
             'width="' + event.imageWidth + '" height="' + event.imageHeight + '">' +
           '<div class="event-card-date-overlay event-card-date-overlay--sm">' +
@@ -155,12 +155,12 @@
         '<div class="event-card-body">' +
           '<div class="event-badges-row">' +
             '<span class="event-badge event-badge--sm' + badgeClass + '">' + escapeHtml(badgeText) + '</span>' +
-            '<span class="event-category-badge event-category-badge--sm">' + escapeHtml(localized(event.category)) + '</span>' +
+            '<span class="event-category-badge event-category-badge--sm">' + escapeHtml(loc(event, 'category')) + '</span>' +
           '</div>' +
-          '<h3 class="event-title event-title--grid">' + escapeHtml(localized(event.title)) + '</h3>' +
-          '<p class="event-desc event-desc--grid">' + escapeHtml(localized(event.description)) + '</p>' +
+          '<h3 class="event-title event-title--grid">' + escapeHtml(loc(event, 'title')) + '</h3>' +
+          '<p class="event-desc event-desc--grid">' + escapeHtml(loc(event, 'description')) + '</p>' +
           '<div class="event-meta-row">' +
-            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(localized(event.location)) + '</span>' +
+            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(loc(event, 'location')) + '</span>' +
             '<span class="event-meta-item"><i class="fas fa-clock" aria-hidden="true"></i> ' + escapeHtml(event.time) + '</span>' +
           '</div>' +
           (upcoming ? '<a href="../contact/" class="btn-cta btn-cta--sm">' + escapeHtml(t('events.cta')) + '</a>' : '') +
@@ -183,11 +183,9 @@
 
     if (!featuredContainer || !gridContainer) return;
 
-    // Sort events by date (nearest first for upcoming, most recent first for past)
+    // Sort events by date (nearest first)
     var sorted = eventsData.slice().sort(function (a, b) {
-      var da = parseDate(a.date);
-      var db = parseDate(b.date);
-      return da - db;
+      return parseDate(a.date) - parseDate(b.date);
     });
 
     // Apply filter
@@ -246,7 +244,6 @@
   }
 
   function updateStaticTexts() {
-    // Update data-i18n elements specific to events page
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       var val = t(key);
@@ -321,7 +318,7 @@
     });
 
     // Roving tabindex: only active tab is in tab order
-    buttons.forEach(function (btn, i) {
+    buttons.forEach(function (btn) {
       btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
     });
   }
@@ -338,34 +335,28 @@
   }
 
 
-  /* ── FETCH & INIT ── */
-  function init() {
+  /* ── INIT (waits for eventsReady from events-builder.js) ── */
+  function initEventsPage(events) {
     var lang = getLang();
     Promise.all([
       loadLocale(lang),
-      lang !== FALLBACK_LANG ? loadLocale(FALLBACK_LANG) : Promise.resolve(null),
-      fetch('events.json').then(function (res) {
-        if (!res.ok) throw new Error('Failed to load events');
-        return res.json();
-      })
-    ])
-      .then(function (results) {
-        eventsData = results[2];
-        render();
-        initFilters();
-        watchLanguageChanges();
-      })
-      .catch(function (err) {
-        console.error('Events load error:', err);
-        var emptyEl = document.getElementById('events-empty');
-        if (emptyEl) emptyEl.hidden = false;
-      });
+      lang !== FALLBACK_LANG ? loadLocale(FALLBACK_LANG) : Promise.resolve(null)
+    ]).then(function () {
+      eventsData = events;
+      render();
+      initFilters();
+      watchLanguageChanges();
+    });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  window.addEventListener('eventsReady', function (e) {
+    var events = e.detail && e.detail.events || [];
+    if (events.length === 0) {
+      var emptyEl = document.getElementById('events-empty');
+      if (emptyEl) emptyEl.hidden = false;
+      return;
+    }
+    initEventsPage(events);
+  });
 
 })();

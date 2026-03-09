@@ -158,8 +158,8 @@
     <section id="events-grid-section" class="section" aria-labelledby="events-grid-heading">
       <div class="container">
         <h2 id="events-grid-heading" class="section-title events-grid-title" data-i18n="events.upcomingHeading">Próximos eventos</h2>
-        <!-- Dynamically rendered by events.js -->
-        <div id="events-grid" class="row g-4" role="list" aria-live="polite"></div>
+        <!-- Dynamically rendered by events-builder.js + events.js -->
+        <div id="events-grid" class="events-grid row g-4" data-events-src="events.json" role="list" aria-live="polite"></div>
         <!-- Empty state -->
         <div id="events-empty" class="events-empty" role="status" hidden>
           <i class="far fa-calendar-times events-empty-icon" aria-hidden="true"></i>
@@ -241,6 +241,7 @@
 
   <!-- Scripts -->
   <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/events-builder.js" defer></script>
   <script src="events.js" defer></script>
 </body>
 </html>

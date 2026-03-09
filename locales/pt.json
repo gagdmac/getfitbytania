@@ -146,7 +146,44 @@
     "cta": "Reserve sua vaga",
     "spots": "vagas",
     "viewAll": "Ver todos os eventos",
-    "monthNames": ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
+    "monthNames": ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"],
+    "items": {
+      "hipopresivos-playa-2026": {
+        "title": "Masterclass de Hipopressivos ao Ar Livre",
+        "description": "Sessão especial de ginástica hipopressiva na praia de San Juan. Aberta a todos os níveis. Aprenda técnicas de respiração e fortalecimento do assoalho pélvico com o som do mar.",
+        "location": "Praia de San Juan, Alicante",
+        "category": "Hipopressivos",
+        "imageAlt": "Tania ensinando hipopressivos em Alicante"
+      },
+      "bootcamp-primavera-2026": {
+        "title": "Bootcamp de Primavera",
+        "description": "Treino funcional ao ar livre com circuitos de força, cardio e alongamentos. Ideal para todos os níveis. Venha treinar connosco sob o sol de Alicante!",
+        "location": "Parque Lo Morant, Alicante",
+        "category": "Funcional",
+        "imageAlt": "Sessão de treino funcional ao ar livre"
+      },
+      "pilates-atardecer-2026": {
+        "title": "Pilates ao Pôr do Sol",
+        "description": "Sessão de pilates na praia com o pôr do sol como fundo. Trabalhe seu core, melhore a postura e relaxe com o som das ondas.",
+        "location": "Praia do Postiguet, Alicante",
+        "category": "Pilates",
+        "imageAlt": "Sessão de pilates ao pôr do sol"
+      },
+      "cross-training-verano-2026": {
+        "title": "Cross Training Intensivo de Verão",
+        "description": "Prepare-se para o verão com um treino de alta intensidade! Combinamos exercícios de força, resistência e agilidade para superar seus limites.",
+        "location": "Academia NH, Alicante",
+        "category": "Cross Training",
+        "imageAlt": "Sessão de cross training na academia"
+      },
+      "taller-nutricion-2026": {
+        "title": "Workshop de Nutrição Esportiva",
+        "description": "Aprenda a se alimentar de forma saudável e otimize seu rendimento esportivo. Falaremos sobre macronutrientes, hidratação e planejamento de refeições pré e pós-treino.",
+        "location": "Centro Desportivo Total Body, Alicante",
+        "category": "Nutrição",
+        "imageAlt": "Workshop de nutrição esportiva"
+      }
+    }
   },
   "blog": {
     "heading": "Blog",

@@ -146,7 +146,44 @@
     "cta": "Reserva tu plaza",
     "spots": "plazas",
     "viewAll": "Ver todos los eventos",
-    "monthNames": ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"]
+    "monthNames": ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"],
+    "items": {
+      "hipopresivos-playa-2026": {
+        "title": "Masterclass Hipopresivos al Aire Libre",
+        "description": "Sesión especial de gimnasia hipopresiva en la playa de San Juan. Abierta a todos los niveles. Aprende técnicas de respiración y fortalecimiento del suelo pélvico con el sonido del mar.",
+        "location": "Playa de San Juan, Alicante",
+        "category": "Hipopresivos",
+        "imageAlt": "Tania enseñando hipopresivos en Alicante"
+      },
+      "bootcamp-primavera-2026": {
+        "title": "Bootcamp de Primavera",
+        "description": "Entrenamiento funcional al aire libre con circuitos de fuerza, cardio y estiramientos. Ideal para todos los niveles. ¡Ven a entrenar con nosotros bajo el sol de Alicante!",
+        "location": "Parque Lo Morant, Alicante",
+        "category": "Funcional",
+        "imageAlt": "Sesión de entrenamiento funcional al aire libre"
+      },
+      "pilates-atardecer-2026": {
+        "title": "Pilates al Atardecer",
+        "description": "Sesión de pilates en la playa con la puesta de sol de fondo. Trabaja tu core, mejora la postura y relájate con el sonido de las olas.",
+        "location": "Playa del Postiguet, Alicante",
+        "category": "Pilates",
+        "imageAlt": "Sesión de pilates al atardecer"
+      },
+      "cross-training-verano-2026": {
+        "title": "Cross Training Intensivo de Verano",
+        "description": "¡Prepárate para el verano con un entrenamiento de alta intensidad! Combinamos ejercicios de fuerza, resistencia y agilidad para superar tus límites.",
+        "location": "Gimnasio NH, Alicante",
+        "category": "Cross Training",
+        "imageAlt": "Sesión de cross training en el gimnasio"
+      },
+      "taller-nutricion-2026": {
+        "title": "Taller de Nutrición Deportiva",
+        "description": "Aprende a alimentarte de forma saludable y optimiza tu rendimiento deportivo. Hablaremos de macronutrientes, hidratación y planificación de comidas pre y post entrenamiento.",
+        "location": "Centro Deportivo Total Body, Alicante",
+        "category": "Nutrición",
+        "imageAlt": "Taller de nutrición deportiva"
+      }
+    }
   },
   "blog": {
     "heading": "Blog",

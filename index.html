@@ -269,8 +269,8 @@
           <p class="section-subtitle" data-i18n="events.subtitle">Próximas actividades y experiencias de entrenamiento</p>
         </div>
 
-        <!-- Dynamically rendered from events.json -->
-        <div id="home-events" class="row g-4" role="list" aria-live="polite"></div>
+        <!-- Dynamically rendered by events-builder.js + home-events.js -->
+        <div id="home-events" class="events-grid row g-4" data-events-src="events/events.json" role="list" aria-live="polite"></div>
         <div class="text-center" style="margin-top: var(--space-8)">
           <a href="events/" class="btn-ghost" data-i18n="events.viewAll">Ver todos los eventos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
@@ -426,6 +426,7 @@
 
   <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/events-builder.js" defer></script>
   <script src="assets/js/home-events.js" defer></script>
 </body>
 </html>

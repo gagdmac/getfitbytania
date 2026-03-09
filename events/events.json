@@ -7,32 +7,7 @@
     "image": "../assets/pics/TaniaAngulohipopresivosalicante.jpg",
     "imageWidth": 3236,
     "imageHeight": 5033,
-    "spots": 15,
-    "title": {
-      "es": "Masterclass Hipopresivos al Aire Libre",
-      "en": "Outdoor Hypopressive Masterclass",
-      "pt": "Masterclass de Hipopressivos ao Ar Livre"
-    },
-    "description": {
-      "es": "Sesión especial de gimnasia hipopresiva en la playa de San Juan. Abierta a todos los niveles. Aprende técnicas de respiración y fortalecimiento del suelo pélvico con el sonido del mar.",
-      "en": "Special hypopressive gymnastics session on San Juan Beach. Open to all levels. Learn breathing techniques and pelvic floor strengthening with the sound of the sea.",
-      "pt": "Sessão especial de ginástica hipopressiva na praia de San Juan. Aberta a todos os níveis. Aprenda técnicas de respiração e fortalecimento do assoalho pélvico com o som do mar."
-    },
-    "location": {
-      "es": "Playa de San Juan, Alicante",
-      "en": "San Juan Beach, Alicante",
-      "pt": "Praia de San Juan, Alicante"
-    },
-    "category": {
-      "es": "Hipopresivos",
-      "en": "Hypopressive",
-      "pt": "Hipopressivos"
-    },
-    "imageAlt": {
-      "es": "Tania enseñando hipopresivos en Alicante",
-      "en": "Tania teaching hypopressive exercises in Alicante",
-      "pt": "Tania ensinando hipopressivos em Alicante"
-    }
+    "spots": 15
   },
   {
     "id": "bootcamp-primavera-2026",
@@ -42,32 +17,7 @@
     "image": "../assets/pics/IMG_20191105_114646.jpg",
     "imageWidth": 4000,
     "imageHeight": 4000,
-    "spots": 20,
-    "title": {
-      "es": "Bootcamp de Primavera",
-      "en": "Spring Bootcamp",
-      "pt": "Bootcamp de Primavera"
-    },
-    "description": {
-      "es": "Entrenamiento funcional al aire libre con circuitos de fuerza, cardio y estiramientos. Ideal para todos los niveles. ¡Ven a entrenar con nosotros bajo el sol de Alicante!",
-      "en": "Outdoor functional training with strength circuits, cardio and stretching. Ideal for all levels. Come train with us under the Alicante sun!",
-      "pt": "Treino funcional ao ar livre com circuitos de força, cardio e alongamentos. Ideal para todos os níveis. Venha treinar connosco sob o sol de Alicante!"
-    },
-    "location": {
-      "es": "Parque Lo Morant, Alicante",
-      "en": "Lo Morant Park, Alicante",
-      "pt": "Parque Lo Morant, Alicante"
-    },
-    "category": {
-      "es": "Funcional",
-      "en": "Functional",
-      "pt": "Funcional"
-    },
-    "imageAlt": {
-      "es": "Sesión de entrenamiento funcional al aire libre",
-      "en": "Outdoor functional training session",
-      "pt": "Sessão de treino funcional ao ar livre"
-    }
+    "spots": 20
   },
   {
     "id": "pilates-atardecer-2026",
@@ -77,32 +27,7 @@
     "image": "../assets/pics/IMG_20200327_081451.jpg",
     "imageWidth": 4032,
     "imageHeight": 3024,
-    "spots": 12,
-    "title": {
-      "es": "Pilates al Atardecer",
-      "en": "Sunset Pilates",
-      "pt": "Pilates ao Pôr do Sol"
-    },
-    "description": {
-      "es": "Sesión de pilates en la playa con la puesta de sol de fondo. Trabaja tu core, mejora la postura y relájate con el sonido de las olas.",
-      "en": "Beach pilates session with the sunset as your backdrop. Work your core, improve posture and relax with the sound of the waves.",
-      "pt": "Sessão de pilates na praia com o pôr do sol como fundo. Trabalhe seu core, melhore a postura e relaxe com o som das ondas."
-    },
-    "location": {
-      "es": "Playa del Postiguet, Alicante",
-      "en": "Postiguet Beach, Alicante",
-      "pt": "Praia do Postiguet, Alicante"
-    },
-    "category": {
-      "es": "Pilates",
-      "en": "Pilates",
-      "pt": "Pilates"
-    },
-    "imageAlt": {
-      "es": "Sesión de pilates al atardecer",
-      "en": "Sunset pilates session",
-      "pt": "Sessão de pilates ao pôr do sol"
-    }
+    "spots": 12
   },
   {
     "id": "cross-training-verano-2026",
@@ -112,32 +37,7 @@
     "image": "../assets/pics/IMG_20190918_115133.jpg",
     "imageWidth": 4032,
     "imageHeight": 3024,
-    "spots": 18,
-    "title": {
-      "es": "Cross Training Intensivo de Verano",
-      "en": "Summer Intensive Cross Training",
-      "pt": "Cross Training Intensivo de Verão"
-    },
-    "description": {
-      "es": "¡Prepárate para el verano con un entrenamiento de alta intensidad! Combinamos ejercicios de fuerza, resistencia y agilidad para superar tus límites.",
-      "en": "Get ready for summer with high-intensity training! We combine strength, endurance and agility exercises to push your limits.",
-      "pt": "Prepare-se para o verão com um treino de alta intensidade! Combinamos exercícios de força, resistência e agilidade para superar seus limites."
-    },
-    "location": {
-      "es": "Gimnasio NH, Alicante",
-      "en": "NH Gym, Alicante",
-      "pt": "Academia NH, Alicante"
-    },
-    "category": {
-      "es": "Cross Training",
-      "en": "Cross Training",
-      "pt": "Cross Training"
-    },
-    "imageAlt": {
-      "es": "Sesión de cross training en el gimnasio",
-      "en": "Cross training session at the gym",
-      "pt": "Sessão de cross training na academia"
-    }
+    "spots": 18
   },
   {
     "id": "taller-nutricion-2026",
@@ -147,31 +47,6 @@
     "image": "../assets/pics/IMG_20200102_174522.jpg",
     "imageWidth": 3024,
     "imageHeight": 3024,
-    "spots": 25,
-    "title": {
-      "es": "Taller de Nutrición Deportiva",
-      "en": "Sports Nutrition Workshop",
-      "pt": "Workshop de Nutrição Esportiva"
-    },
-    "description": {
-      "es": "Aprende a alimentarte de forma saludable y optimiza tu rendimiento deportivo. Hablaremos de macronutrientes, hidratación y planificación de comidas pre y post entrenamiento.",
-      "en": "Learn to eat healthily and optimize your sports performance. We'll discuss macronutrients, hydration and pre/post-workout meal planning.",
-      "pt": "Aprenda a se alimentar de forma saudável e otimize seu rendimento esportivo. Falaremos sobre macronutrientes, hidratação e planejamento de refeições pré e pós-treino."
-    },
-    "location": {
-      "es": "Centro Deportivo Total Body, Alicante",
-      "en": "Total Body Sports Center, Alicante",
-      "pt": "Centro Desportivo Total Body, Alicante"
-    },
-    "category": {
-      "es": "Nutrición",
-      "en": "Nutrition",
-      "pt": "Nutrição"
-    },
-    "imageAlt": {
-      "es": "Taller de nutrición deportiva",
-      "en": "Sports nutrition workshop",
-      "pt": "Workshop de nutrição esportiva"
-    }
+    "spots": 25
   }
 ]

@@ -146,7 +146,44 @@
     "cta": "Reserve your spot",
     "spots": "spots",
     "viewAll": "View all events",
-    "monthNames": ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    "monthNames": ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+    "items": {
+      "hipopresivos-playa-2026": {
+        "title": "Outdoor Hypopressive Masterclass",
+        "description": "Special hypopressive gymnastics session on San Juan Beach. Open to all levels. Learn breathing techniques and pelvic floor strengthening with the sound of the sea.",
+        "location": "San Juan Beach, Alicante",
+        "category": "Hypopressive",
+        "imageAlt": "Tania teaching hypopressive exercises in Alicante"
+      },
+      "bootcamp-primavera-2026": {
+        "title": "Spring Bootcamp",
+        "description": "Outdoor functional training with strength circuits, cardio and stretching. Ideal for all levels. Come train with us under the Alicante sun!",
+        "location": "Lo Morant Park, Alicante",
+        "category": "Functional",
+        "imageAlt": "Outdoor functional training session"
+      },
+      "pilates-atardecer-2026": {
+        "title": "Sunset Pilates",
+        "description": "Beach pilates session with the sunset as your backdrop. Work your core, improve posture and relax with the sound of the waves.",
+        "location": "Postiguet Beach, Alicante",
+        "category": "Pilates",
+        "imageAlt": "Sunset pilates session"
+      },
+      "cross-training-verano-2026": {
+        "title": "Summer Intensive Cross Training",
+        "description": "Get ready for summer with high-intensity training! We combine strength, endurance and agility exercises to push your limits.",
+        "location": "NH Gym, Alicante",
+        "category": "Cross Training",
+        "imageAlt": "Cross training session at the gym"
+      },
+      "taller-nutricion-2026": {
+        "title": "Sports Nutrition Workshop",
+        "description": "Learn to eat healthily and optimize your sports performance. We'll discuss macronutrients, hydration and pre/post-workout meal planning.",
+        "location": "Total Body Sports Center, Alicante",
+        "category": "Nutrition",
+        "imageAlt": "Sports nutrition workshop"
+      }
+    }
   },
   "blog": {
     "heading": "Blog",

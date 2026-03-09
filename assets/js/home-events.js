@@ -1,6 +1,8 @@
 /* ═══════════════════════════════════════════════════════
    GetFitByTania — Home Page Events
-   Loads 3 upcoming events from events/events.json
+   Shows 3 upcoming events from events.json.
+   Receives event data via the `eventsReady` custom event
+   dispatched by events-builder.js.
    ═══════════════════════════════════════════════════════ */
 
 (function () {
@@ -56,10 +58,8 @@
     return localStorage.getItem('gfbt-lang') || 'es';
   }
 
-  function localized(obj) {
-    if (!obj) return '';
-    var lang = getLang();
-    return obj[lang] || obj.es || '';
+  function loc(event, field) {
+    return t('events.items.' + event.id + '.' + field);
   }
 
   function parseDate(dateStr) {
@@ -94,7 +94,7 @@
     return dateStr.split('-')[0];
   }
 
-  /* ── Render the featured (highlighted) card — uses the existing homepage style ── */
+  /* ── Render the featured (highlighted) card ── */
   function renderFeatured(event) {
     return '<div class="col-12 col-lg-8" role="listitem">' +
       '<article class="event-card event-card--featured reveal">' +
@@ -105,10 +105,10 @@
         '</div>' +
         '<div class="event-card-body">' +
           '<div class="event-badge">' + escapeHtml(t('events.badgeUpcoming')) + '</div>' +
-          '<h3 class="event-title">' + escapeHtml(localized(event.title)) + '</h3>' +
-          '<p class="event-desc">' + escapeHtml(localized(event.description)) + '</p>' +
+          '<h3 class="event-title">' + escapeHtml(loc(event, 'title')) + '</h3>' +
+          '<p class="event-desc">' + escapeHtml(loc(event, 'description')) + '</p>' +
           '<div class="event-meta-row">' +
-            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(localized(event.location)) + '</span>' +
+            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(loc(event, 'location')) + '</span>' +
             '<span class="event-meta-item"><i class="fas fa-clock" aria-hidden="true"></i> ' + escapeHtml(event.time) + '</span>' +
             '<span class="event-meta-item"><i class="fas fa-users" aria-hidden="true"></i> ' + event.spots + ' ' + escapeHtml(t('events.spots')) + '</span>' +
           '</div>' +
@@ -128,9 +128,9 @@
         '</div>' +
         '<div class="event-card-body">' +
           '<div class="event-badge event-badge--sm">' + escapeHtml(t('events.badgeUpcoming')) + '</div>' +
-          '<h3 class="event-title event-title--sm">' + escapeHtml(localized(event.title)) + '</h3>' +
+          '<h3 class="event-title event-title--sm">' + escapeHtml(loc(event, 'title')) + '</h3>' +
           '<div class="event-meta-row">' +
-            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(localized(event.location)) + '</span>' +
+            '<span class="event-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(loc(event, 'location')) + '</span>' +
             '<span class="event-meta-item"><i class="fas fa-clock" aria-hidden="true"></i> ' + escapeHtml(event.time) + '</span>' +
           '</div>' +
         '</div>' +
@@ -203,30 +203,24 @@
     });
   }
 
-  /* ── Init ── */
-  function init() {
+  /* ── INIT (waits for eventsReady from events-builder.js) ── */
+  function initHomeEvents(events) {
+    cachedEvents = events;
     var lang = getLang();
     Promise.all([
       loadLocale(lang),
-      lang !== FALLBACK_LANG ? loadLocale(FALLBACK_LANG) : Promise.resolve(null),
-      fetch('events/events.json').then(function (res) {
-        if (!res.ok) throw new Error('Failed to load events');
-        return res.json();
-      })
-    ])
-      .then(function (results) {
-        cachedEvents = results[2];
-        render(cachedEvents);
-        watchLang();
-      })
-      .catch(function (err) {
-        console.error('Home events load error:', err);
-      });
+      lang !== FALLBACK_LANG ? loadLocale(FALLBACK_LANG) : Promise.resolve(null)
+    ]).then(function () {
+      render(cachedEvents);
+      watchLang();
+    });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  window.addEventListener('eventsReady', function (e) {
+    var events = e.detail && e.detail.events || [];
+    if (events.length > 0) {
+      initHomeEvents(events);
+    }
+  });
+
 })();
