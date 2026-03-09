@@ -109,7 +109,9 @@
   },
   "contact": {
     "heading": "Ready to start?",
+    "eyebrow": "Tania Angulo · Alicante",
     "intro": "Tell me your goal and we'll design the perfect training plan for you.",
+    "heroCta": "Write to me",
     "ctaBtn": "Write to me",
     "followMe": "Follow me",
     "formLabelName": "Name",

@@ -109,7 +109,9 @@
   },
   "contact": {
     "heading": "¿Empezamos?",
+    "eyebrow": "Tania Angulo · Alicante",
     "intro": "Cuéntame tu objetivo y diseñamos juntos el entrenamiento perfecto para ti.",
+    "heroCta": "Escríbeme",
     "ctaBtn": "Escríbeme",
     "followMe": "Sígueme",
     "formLabelName": "Nombre",

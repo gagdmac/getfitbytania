@@ -76,50 +76,73 @@
 
         <!-- Header actions (visible on desktop, hidden on mobile) -->
         <div class="header-actions">
+          <!-- Language switcher -->
           <div class="lang-switcher" role="group" data-i18n-aria-label="aria.langSwitcherLabel" aria-label="Seleccionar idioma">
             <button class="lang-btn active" aria-pressed="true" data-lang="es">ES</button>
             <button class="lang-btn" aria-pressed="false" data-lang="en">EN</button>
             <button class="lang-btn" aria-pressed="false" data-lang="pt">PT</button>
           </div>
 
-          <!-- Settings toggle -->
-          <button class="settings-toggle" aria-expanded="false" aria-controls="settings-panel" data-i18n-aria-label="aria.settingsToggleLabel" aria-label="Ajustes de accesibilidad">
-            <i class="fas fa-cog" aria-hidden="true"></i>
+          <!-- Theme toggle -->
+          <button
+            class="theme-toggle"
+            data-i18n-aria-label="aria.themeToggleLabel"
+            aria-label="Cambiar a modo oscuro"
+          >
+            <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+            <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+          </button>
+
+          <!-- Font size toggle -->
+          <button
+            class="font-size-toggle"
+            data-i18n-aria-label="aria.fontSizeLabel"
+            aria-label="Aumentar tamaño de fuente"
+            aria-live="polite"
+          >
+            <span class="font-size-icon" aria-hidden="true">A</span>
+            <span class="font-size-value" aria-hidden="true">100%</span>
           </button>
         </div>
 
-        <!-- Settings panel -->
-        <div id="settings-panel" class="settings-panel" hidden>
+        <!-- Settings toggle (mobile only — cog icon) -->
+        <button
+          class="settings-toggle"
+          aria-expanded="false"
+          aria-controls="settings-panel"
+          data-i18n-aria-label="aria.settingsToggleLabel"
+          aria-label="Abrir ajustes"
+        >
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </button>
+
+        <!-- Settings panel (mobile — slides from right) -->
+        <div id="settings-panel" class="settings-panel" aria-label="Ajustes" role="region">
           <div class="settings-panel-inner">
-            <p class="settings-heading" data-i18n="settings.heading">Ajustes</p>
-
-            <!-- Theme toggle -->
-            <div class="settings-row">
-              <span class="settings-label" id="theme-label" data-i18n="settings.theme">Tema</span>
-              <button
-                class="theme-toggle"
-                role="switch"
-                aria-checked="false"
-                aria-labelledby="theme-label"
-                data-i18n-aria-label="aria.themeToggleLabel"
-              >
-                <span class="theme-toggle-track">
-                  <i class="fas fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
-                  <i class="fas fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
-                  <span class="theme-toggle-thumb"></span>
-                </span>
-              </button>
+            <div class="lang-switcher lang-switcher--mobile" role="group" data-i18n-aria-label="aria.langSwitcherLabel" aria-label="Seleccionar idioma">
+              <button class="lang-btn active" aria-pressed="true" data-lang="es">ES</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="en">EN</button>
+              <button class="lang-btn" aria-pressed="false" data-lang="pt">PT</button>
             </div>
+            <button
+              class="theme-toggle theme-toggle--mobile"
+              data-i18n-aria-label="aria.themeToggleLabel"
+              aria-label="Cambiar a modo oscuro"
+            >
+              <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+              <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+            </button>
 
-            <!-- Font-size -->
-            <div class="settings-row">
-              <span class="settings-label" id="font-label" data-i18n="settings.font">Tamaño de texto</span>
-              <div class="font-size-controls" role="group" aria-labelledby="font-label">
-                <button class="font-btn" data-action="decrease" data-i18n-aria-label="aria.fontDecrease" aria-label="Reducir tamaño de texto">A−</button>
-                <span class="font-size-value" aria-live="polite">100 %</span>
-                <button class="font-btn" data-action="increase" data-i18n-aria-label="aria.fontIncrease" aria-label="Aumentar tamaño de texto">A+</button>
-              </div>
-            </div>
+            <!-- Font size toggle (mobile) -->
+            <button
+              class="font-size-toggle font-size-toggle--mobile"
+              data-i18n-aria-label="aria.fontSizeLabel"
+              aria-label="Aumentar tamaño de fuente"
+              aria-live="polite"
+            >
+              <span class="font-size-icon" aria-hidden="true">A</span>
+              <span class="font-size-value" aria-hidden="true">100%</span>
+            </button>
           </div>
         </div>
 
@@ -134,17 +157,56 @@
   <main id="main-content">
 
     <!-- ─── CONTACT HERO ─── -->
-    <section class="section section--accent contact-hero" aria-labelledby="contact-heading">
+    <section id="hero" class="contact-hero" aria-labelledby="contact-heading">
+      <!-- Decorative background -->
+      <div class="contact-hero__bg" aria-hidden="true">
+        <div class="contact-hero__shape contact-hero__shape--1"></div>
+        <div class="contact-hero__shape contact-hero__shape--2"></div>
+        <div class="contact-hero__shape contact-hero__shape--3"></div>
+        <div class="contact-hero__line contact-hero__line--1"></div>
+        <div class="contact-hero__line contact-hero__line--2"></div>
+      </div>
+
       <div class="container">
-        <div class="section-header text-center">
-          <h1 id="contact-heading" class="section-title section-title--light" data-i18n="contact.heading">¿Empezamos?</h1>
-          <p class="contact-intro" data-i18n="contact.intro">Cuéntame tu objetivo y diseñamos juntos el entrenamiento perfecto para ti.</p>
+        <div class="row align-items-center contact-hero__row">
+
+          <!-- Left — big text, CTA -->
+          <div class="col-12 col-lg-7">
+            <div class="contact-hero__content">
+              <p class="hero-eyebrow" data-i18n="contact.eyebrow">Tania Angulo · Alicante</p>
+              <h1 id="contact-heading" class="contact-hero__title" data-i18n="contact.heading">¿Empezamos?</h1>
+              <p class="contact-hero__subtitle" data-i18n="contact.intro">Cuéntame tu objetivo y diseñamos juntos el entrenamiento perfecto para ti.</p>
+              <div class="hero-actions">
+                <a href="#contact-form-section" class="btn-cta" data-i18n="contact.heroCta">Escríbeme</a>
+                <a href="https://wa.me/34620098860" target="_blank" rel="noopener noreferrer" class="btn-ghost"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right — quick contact cards -->
+          <div class="col-12 col-lg-5">
+            <div class="contact-hero__cards">
+              <a href="https://wa.me/34620098860" target="_blank" rel="noopener noreferrer" class="contact-hero__card contact-hero__card--wa">
+                <span class="contact-hero__card-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+                <span class="contact-hero__card-label">+34 620 098 860</span>
+              </a>
+              <a href="https://www.instagram.com/tania.angulo_trainer" target="_blank" rel="noopener noreferrer" class="contact-hero__card contact-hero__card--ig">
+                <span class="contact-hero__card-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                <span class="contact-hero__card-label">@tania.angulo_trainer</span>
+              </a>
+              <div class="contact-hero__card contact-hero__card--loc">
+                <span class="contact-hero__card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                <span class="contact-hero__card-label">Alicante, España</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- ─── CONTACT FORM ─── -->
-    <section class="section" aria-labelledby="contact-form-heading">
+    <section id="contact-form-section" class="section" aria-labelledby="contact-form-heading">
       <div class="container">
         <div class="row g-4 g-lg-5 justify-content-center">
           <div class="col-12 col-lg-7">
