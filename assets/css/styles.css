@@ -67,8 +67,8 @@
   --color-surface: #FDFAF6;
   --color-surface-raised: #F3EDE4;
   --color-surface-overlay: rgba(253, 250, 246, 0.97);
-  --color-border: #E0D8CC;
-  --color-border-subtle: #EDE7DD;
+  --color-border: #B5AB9C;
+  --color-border-subtle: #C4B9A8;
   --color-text-primary: #1A1714;
   --color-text-secondary: #6B6258;
   --color-text-muted: #68605a;
@@ -83,8 +83,8 @@
   --color-surface: #0E0E14;
   --color-surface-raised: #171720;
   --color-surface-overlay: rgba(14, 14, 20, 0.97);
-  --color-border: #2C2C38;
-  --color-border-subtle: #1E1E28;
+  --color-border: #626280;
+  --color-border-subtle: #5E5E76;
   --color-text-primary: #F4F0EA;
   --color-text-secondary: #A09888;
   --color-text-muted: #8A8278;
@@ -143,7 +143,7 @@
 [data-theme="dark"] .about-card,
 [data-theme="dark"] .event-card,
 [data-theme="dark"] .blog-card {
-  border-color: #2A2A36;
+  border-color: var(--color-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), var(--shadow-sm);
 }
 
@@ -152,12 +152,12 @@
 [data-theme="dark"] .form-group textarea {
   background: rgba(255, 255, 255, 0.1);
   color: var(--color-text-primary);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 [data-theme="dark"] .form-group input::placeholder,
 [data-theme="dark"] .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme="dark"] .form-group input:focus,
@@ -1616,7 +1616,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .contact-hero .hero-eyebrow {
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.85);
 }
 
 .contact-hero .hero-eyebrow::before {
@@ -2534,7 +2534,7 @@ a.contact-hero__card:focus-visible {
 /* Dark mode overrides for events page */
 [data-theme="dark"] .event-card--page,
 [data-theme="dark"] .event-card--grid {
-  border-color: #2A2A36;
+  border-color: var(--color-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), var(--shadow-sm);
 }
 
@@ -3030,8 +3030,8 @@ a.contact-hero__card:focus-visible {
 }
 
 .social-links a:hover:has(.fa-facebook-f) {
-  border-color: #1877F2;
-  color: #1877F2;
+  border-color: #2088FF;
+  color: #2088FF;
 }
 
 .social-links a:hover:has(.fa-whatsapp) {
@@ -3050,6 +3050,51 @@ a.contact-hero__card:focus-visible {
   color: var(--color-surface);
   opacity: 0.65;
   margin: 0;
+}
+
+/* WCAG 1.4.3: lighter accent for text on dark footer bg (4.74:1) */
+.footer-brand-link:hover,
+.footer-links a:hover,
+.footer-links--contact i {
+  color: #D4604A;
+}
+
+/* Dark mode: keep footer dark, prevent variable inversion */
+[data-theme="dark"] .site-footer {
+  background: var(--color-surface-raised);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .footer-heading,
+[data-theme="dark"] .footer-brand-link,
+[data-theme="dark"] .footer-brand,
+[data-theme="dark"] .footer-copy {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .footer-tagline,
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-links--contact li {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .footer-links a:hover,
+[data-theme="dark"] .footer-brand-link:hover,
+[data-theme="dark"] .footer-links--contact i {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .social-links a {
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .footer-copy {
+  opacity: 0.65;
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top-color: var(--color-border);
 }
 
 
